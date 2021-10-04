@@ -21,30 +21,55 @@
 
 body {
     color: white;
-    background-color: #423434;
+    background-color: #040349;
+    background-color: rgb(52 10 10);
 }
 
 body a {
     color: white;
 }
 
-.container {
-    /* border: 5px solid red; */
-    width: 390px;
-    height: 915px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
+header{
+    margin-top: 20px;
 }
 
-.tittle {
-    /* border: 5px solid red; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header .logo{
+    /* border: 2px solid red; */
+    width: 175px;
+    margin: 0 auto;
 }
+
+#user{
+    /* border: 2px solid red; */
+    width: 175px;
+    margin: 5px auto;
+}
+
+.container {
+    /* border: 5px solid red; */
+    width: 650px;
+    /* height: 915px; */
+    margin: auto;
+}
+
+@media screen and (max-width:700px){
+    .container{
+        width: 80vw;
+    }
+
+    header .logo{
+        /* border: 2px solid red; */
+        width: 175px;
+        margin-left: 10vw;
+    }
+
+    #user{
+        /* border: 2px solid red; */
+        width: 175px;
+        margin-left: 10vw;
+    }
+}
+
 
 .logo {
     display: flex;
@@ -67,18 +92,27 @@ body a {
     font-size: 1.5rem;
 }
 
+#lname{
+    display: block;
+}
+
 .credencial {
     /* border: 5px solid red; */
+    width: 100%;
     margin: 30px 0px;
     font-size: 20px;
     font-family: 'Roboto Condensed', sans-serif;
+    display: grid;
+    /* grid-template-columns: repeat(2,auto); */
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-gap: 1.5rem;
 }
 
 .credencial input,
 select {
     width: 100%;
     height: 35px;
-    margin: 15px 0px;
+    margin: 7px 0px;
     border-radius: 6px;
     font-size: 15px;
     color: rgb(0, 0, 0);
@@ -99,7 +133,7 @@ select {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .log_in li {
