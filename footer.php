@@ -24,8 +24,8 @@
   <footer class="page-footer font-small cyan darken-3" style="background-color: #e3f2fd;">
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2021 Copyright:
-      <a href="https://www.iiitdmj.ac.in/" target="_blank"> IIITDM Jabalpur</a>
+    <div class="footer-copyright text-center py-1 bg-light">
+      <a href="https://www.iiitdmj.ac.in/" target="_blank"> © 2021 Copyright: IIITDM Jabalpur</a>
     </div>
     <!-- Copyright -->
 
