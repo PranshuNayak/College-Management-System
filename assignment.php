@@ -36,13 +36,13 @@
         <?php
         require 'navbar.php';
         ?>
-        <div class="title">
+        <div class="title"  style="background-color:rgba(255, 255, 255, 0.253); border: 0.5px solid;">
             <div id="heading">
                 assignment
             </div>
             <div class="search_bar">
-                <input type="text" name="search" id="search" placeholder="Date/Course_Id">
-                <button type="button" class="search-btn">search</button>
+                <input type="text" name="search" id="search" placeholder="Date/Course_Id" style="background-color: white; border: 0.5px solid black;">
+                <button type="button" class="search-btn" style="background-color: white; border: 0.5px solid black;">Search</button>
             </div>
         </div>
     </header>
