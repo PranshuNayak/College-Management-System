@@ -38,10 +38,10 @@
                     </div>
                   </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
-                    <a class="nav-link" href="#assignment">Assignment</a>
+                    <a class="nav-link" href="assignment.php">Assignment</a>
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
-                    <a class="nav-link" href="#announcement">Announcement</a>
+                    <a class="nav-link" href="announcement.php">Announcement</a>
                 </li>
             </ul>
         </div>
