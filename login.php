@@ -16,13 +16,13 @@
         <div class="container">
             <div class="tittle">
                 <div class="logo">
-                    <img src="images/Iiitdmj-logo.jpg" alt="logo">
-                    <h1>Canvas</h1>
+                    <img src="images/iiitdmj-icon.jpg" alt="logo">
+         
                     <!-- <h3>Canvas</h3> -->
                 </div>
                 <div>
-                    <li class="decoration"><a href="#Sign up">Dont't have a account?</a></li>
-                    <li class="decoration"><a href="#Sign up"> Sign up</a></li>
+                    <li class="decoration"><a href="">Dont't have a account?</a></li>
+                    <li class="decoration"><a href="account-registration.php"> Sign up</a></li>
                 </div>
 
             </div>
@@ -45,8 +45,6 @@
                 </div>
                 <button type="submit" value="Log in" id="btn">Log in</button>
             </div>
-
-            <hr>
 
         </div>
     </form>

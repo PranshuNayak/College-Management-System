@@ -1,7 +1,6 @@
-
 * {
     margin: 0px;
-    padding: 0px;
+    padding-left: 2px;
 }
 
 /* utility classes */
@@ -16,8 +15,7 @@
 
 body {
     color: white;
-    background-color: #040349;
-    background-color: rgb(52 10 10);
+    background-color: #423434;
 }
 
 body a {

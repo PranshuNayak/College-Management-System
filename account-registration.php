@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Sign-up Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -15,31 +15,26 @@
 
 <body>
     <form action="backend.php" method="POST">
+        <div class="container">
+            <div class="tittle">
+                <div class="logo">
+                    <img src="images/iiitdmj-icon.jpg" alt="logo">
 
-        <header>
-            <div class="logo">
-                <img src="images/Iiitdmj-logo.jpg" alt="logo">
-                <h1>Canvas</h1>
-                
+                </div>
+
             </div>
             <div class="formatting" id="user">
                 User Registration
             </div>
-            
-        </header>
-        <div class="container">
-            <div class="credencial">
-                <div class="name">
-                    <label for="fname">First Name</label><br>
-                    <input type="text" name="fname" id="fname" placeholder="First name" required>
-                </div>
-                <div class="name">
-                <label for="lname">Last Name</label><br>
-                    <input type="text" name="lname" id="lname" placeholder="Last name" required>
+            	<div class="credential">
+                <div id="Name">
+                    <label for="">Name</label><br>
+                    <input style="width:188px" type="text" name="fname" class="name" placeholder="First name" required>
+                    <input style="width:187px" type="text" name="lname" class="name" placeholder="Last name" required>
                 </div>
                 <div id="Email">
                     <label for="email">Email</label><br>
-                    <input type="email" name="email" id="email" placeholder="xyz@abc.com" required>
+                    <input type="email" name="email" id="email" placeholder="xyz@example.com" required>
                 </div>
                 <div id="Profession">
                     <label for="account-type">Profession</label><br>
@@ -61,18 +56,15 @@
             <div class="log_in">
                 <div>
                     <input type="checkbox" name="status" id="stay">
-                    <label for="stay">stay signed in</label>
+                    <label for="stay">Stay signed in</label>
                     <!-- <li class="decoration"><a href="#home">Forgot Password?</a></li> -->
                     <li class="decoration">Welcome to the team</li>
                 </div>
                 <button type="submit" value="Log in" id="btn">Register</button>
 
             </div>
-
-            <hr>
-
         </div>
     </form>
 </body>
 
-</html>
+</html> 
