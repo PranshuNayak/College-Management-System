@@ -24,18 +24,18 @@
             </li></ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0" id="navigation">
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="home-page.php">Home</a>
+                    <a class="nav-link " aria-current="page" href="home-page-te.php">Home</a>
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
-                    <a class="nav-link " href="account.php">Account</a>
+                    <a class="nav-link " href="account_te.php">Account</a>
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Courses
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="courses.php">Courses</a>
-                      <a class="dropdown-item" href="register_courses.php">Register</a>
+                      <a class="dropdown-item" href="courses_teacher.php">Courses</a>
+                      <a class="dropdown-item" href="register_courses_te.php">Register</a>
                     </div>
                   </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">

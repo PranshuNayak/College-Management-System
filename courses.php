@@ -46,7 +46,7 @@
        .grade{
         
         display:flex;
-        background-color: rgb(151, 241, 151);
+        background-color:rgb(211, 119, 211);
         justify-content: space-evenly;
         align-items: center;
         border-radius: 5px;

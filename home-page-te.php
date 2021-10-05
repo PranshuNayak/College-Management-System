@@ -45,7 +45,7 @@
 <body>
 
         <?php 
-            require 'navbar.php';
+            require 'naavbar.php';
         ?>
 
         <div class="content-area">
