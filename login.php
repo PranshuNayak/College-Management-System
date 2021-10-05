@@ -12,12 +12,12 @@
 </head>
 
 <body>
-    <form action="backend.php" method="POST">
+    <form action="home-page.php" method="POST">
         <div class="container">
             <div class="tittle">
                 <div class="logo">
                     <img src="images/iiitdmj-icon.jpg" alt="logo">
-         
+                        &nbsp &nbsp IIITDM Jabalpur
                     <!-- <h3>Canvas</h3> -->
                 </div>
                 <div>
