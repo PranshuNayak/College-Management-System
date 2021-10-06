@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Comtextble" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Announcement</title>
     <style>
@@ -68,6 +68,7 @@
        input:focus{
          outline: none;
        }
+
     </style>
 </head>
 <body>
@@ -81,9 +82,9 @@
          <div><h3>Make Announcement</h3></div>
          <div><input type="text" name="Course_id" placeholder="Course_Id" required></div>
          <div><input type="text" name="teacher_id" placeholder="Teacher_Id" required></div>
-         <div><input type="text" name="semester" placeholder="Semester" required></div>
-         <div><input type="text" name="YEAR" placeholder="Year" required></div>
-         <div><textarea name="Announcement" cols="61" rows="3" placeholder="Content"></textarea></div>
+         <div><input type="number" name="semester" placeholder="Semester" required></div>
+         <div><input type="number" name="YEAR" placeholder="Year" required></div>
+         <div><textarea name="Announcement_File" cols="61" rows="3" placeholder="Content"></textarea></div>
          <div><input type="submit" value="Submit" required></div>
        </div>
       </div>

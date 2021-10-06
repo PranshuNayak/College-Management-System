@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Comtextble" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issue Assignment</title>
     <style>
@@ -81,8 +81,8 @@
          <div><h3>Issue Assignment</h3></div>
          <div><input type="text" name="Course_id" placeholder="Course_Id" required></div>
          <div><input type="text" name="teacher_id" placeholder="Teacher_Id" required></div>
-         <div><input type="text" name="semester" placeholder="Semester" required></div>
-         <div><input type="text" name="YEAR" placeholder="Year" required></div>
+         <div><input type="number" name="semester" placeholder="Semester" required></div>
+         <div><input type="number" name="YEAR" placeholder="Year" required></div>
          <div><input type="text" name="drive_material_link" placeholder="Assignment Link" required></div>
          <div><input type="submit" value="Submit" required></div>
        </div>
