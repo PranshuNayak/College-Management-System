@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Registration</title>
+    <title>Make Announcement</title>
     <style>
 
         body{
@@ -78,12 +78,13 @@
             <img src="images/cover.jpg" alt="image">
         </div>
        <div class="form">
-         <div><h3>Register Here!</h3></div>
-         <div><input type="text" name="Name" placeholder="Name" required></div>
-         <div><input type="text" name="Registration Number" placeholder="Registration Number" required></div>
-         <div><input type="text" name="Course Name" placeholder="Course Name" required></div>
-         <div><input type="text" name="Course ID" placeholder="Course ID" required></div>
-         <div><input type="submit" value="Register" required></div>
+         <div><h3>Make Announcement</h3></div>
+         <div><input type="text" name="Course_id" placeholder="Course_Id" required></div>
+         <div><input type="text" name="teacher_id" placeholder="Teacher_Id" required></div>
+         <div><input type="text" name="semester" placeholder="Semester" required></div>
+         <div><input type="text" name="YEAR" placeholder="Year" required></div>
+         <div><textarea name="Announcement" cols="61" rows="3" placeholder="Content"></textarea></div>
+         <div><input type="submit" value="Submit" required></div>
        </div>
       </div>
            
