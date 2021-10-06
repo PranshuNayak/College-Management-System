@@ -50,7 +50,7 @@
 
         <div class="content-area">
             <div class="cover-image">
-                <img src="images/cover.jpg" alt="">
+                <img src="../images/cover.jpg" alt="">
             </div>
             <div class="welcome">
                 <div>
@@ -66,7 +66,7 @@
             </div>
         </div>
         <?php 
-            require 'footer.php';
+            require '../footer.php';
         ?>
 </body>
 </html>

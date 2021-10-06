@@ -75,7 +75,7 @@
     <?php   require 'navbar.php' ?>
     <div class="content-area">
         <div class="image">
-            <img src="images/cover.jpg" alt="image">
+            <img src="../images/cover.jpg" alt="image">
         </div>
        <div class="form">
          <div><h3>Register Here!</h3></div>
@@ -88,6 +88,6 @@
       </div>
            
 
-    <?php require 'footer.php' ?>
+    <?php require '../footer.php' ?>
 </body>
 </html>

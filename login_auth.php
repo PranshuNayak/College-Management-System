@@ -23,7 +23,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     }
 
     if($s==1){
-        echo '<form action="home-page.php" method="POST"><button type="submit" id="btn"></button></form>';
+        echo '<form action="./Student/home-page.php" method="POST"><button type="submit" id="btn"></button></form>';
     echo '<script>document.addEventListener("DOMContentLoaded",()=>{ document.getElementById("btn").click()})</script>';   
 }
 
@@ -40,7 +40,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 }
 
 if($t==1){
-    echo '<form action="home-page-te.php" method="POST"><button type="submit" id="btn"></button></form>';
+    echo '<form action="./Teacher/home-page.php" method="POST"><button type="submit" id="btn"></button></form>';
     echo '<script>document.addEventListener("DOMContentLoaded",()=>{ document.getElementById("btn").click()})</script>';   
 }
 

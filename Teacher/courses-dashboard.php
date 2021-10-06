@@ -55,11 +55,11 @@
     </style>
   </head>
   <body>
-    <?php   require 'naavbar.php' ?>
+    <?php   require 'navbar.php' ?>
     <div><h3>Courses You teach</h3></div>
     <div class="content-area">
       <div class="image">
-        <img src="images/cover.jpg" alt="image" />
+        <img src="../images/cover.jpg" alt="image" />
       </div>
 
       <div class="course-desc">
@@ -130,6 +130,6 @@
       </div>
     </div>
 
-    <?php require 'footer.php' ?>
+    <?php require '../footer.php' ?>
   </body>
 </html>
