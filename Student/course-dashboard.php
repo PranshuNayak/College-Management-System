@@ -39,17 +39,21 @@
            border: 2px solid rgba(59, 54, 54, 0.068);
            grid-template-rows: repeat(2,1fr);
             border-radius: 10px;
+            height:150px;
             
        }
 
        .grade{
-        background-color: rgb(151, 241, 151);
+        
         display:flex;
+        background-color:rgb(211, 119, 211);
         justify-content: space-evenly;
         align-items: center;
         border-radius: 5px;
         padding: 3px;
        }
+
+    
 
        .dot{
            display: flex;
@@ -83,7 +87,7 @@
     <?php   require 'navbar.php' ?>
     <div class="content-area">
         <div class="image">
-            <img src="images/cover.jpg" alt="image">
+            <img src="../images/cover.jpg" alt="image">
         </div>
        <div class="course-desc">
            <div class="grade">
@@ -183,6 +187,6 @@
        </div>
     </div>
 
-    <?php require 'footer.php' ?>
+    <?php require '../footer.php' ?>
 </body>
 </html>

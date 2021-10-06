@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -12,17 +13,18 @@
     <link href="account.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
     <title>Navbar</title>
+
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="navbar-left">
-                <a><img src="images/iiitdmj-icon.jpg" alt="IITDMJ LOGO" width="50" height="40"></a>
+                <a><img src="../images/iiitdmj-icon.jpg" alt="IITDMJ LOGO" width="50" height="40"></a>
             </li></ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0" id="navigation">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="home-page.php">Home</a>
+                    <a class="nav-link " aria-current="page" href="home-page.php">Home</a>
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
                     <a class="nav-link " href="account.php">Account</a>
@@ -32,15 +34,15 @@
                       Courses
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="courses.php">Courses</a>
+                      <a class="dropdown-item" href="courses-dashboard.php">Courses</a>
                       <a class="dropdown-item" href="register_courses.php">Register</a>
                     </div>
                   </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
-                    <a class="nav-link" href="#assignment">Assignment</a>
+                    <a class="nav-link" href="assignment.php">Assignment</a>
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
-                    <a class="nav-link" href="#announcement">Announcement</a>
+                    <a class="nav-link" href="announcement.php">Announcement</a>
                 </li>
             </ul>
         </div>
