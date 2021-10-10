@@ -93,7 +93,7 @@
            <div class="grade">
                <div class="per">99.6%</div>
                <div class="dot">
-                   <img src="images/more.png" alt="">
+                   <img src="../images/more.png" alt="">
                </div>
            </div>
            <div class="desc">
@@ -105,7 +105,7 @@
        <div class="grade">
                <div class="per">99.6%</div>
                <div class="dot">
-                   <img src="images/more.png" alt="">
+                   <img src="../images/more.png" alt="">
                </div>
            </div>
            <div class="desc">
@@ -117,7 +117,7 @@
        <div class="grade">
                <div class="per">99.6%</div>
                <div class="dot">
-                   <img src="images/more.png" alt="">
+                   <img src="../images/more.png" alt="">
                </div>
            </div>
            <div class="desc">
@@ -129,7 +129,7 @@
        <div class="grade">
                <div class="per">99.6%</div>
                <div class="dot">
-                   <img src="images/more.png" alt="">
+                   <img src="../images/more.png" alt="">
                </div>
            </div>
            <div class="desc">
@@ -141,7 +141,7 @@
        <div class="grade">
                <div class="per">99.6%</div>
                <div class="dot">
-                   <img src="images/more.png" alt="">
+                   <img src="../images/more.png" alt="">
                </div>
            </div>
            <div class="desc">
@@ -153,7 +153,7 @@
        <div class="grade">
                <div class="per">99.6%</div>
                <div class="dot">
-                   <img src="images/more.png" alt="">
+                   <img src="../images/more.png" alt="">
                </div>
            </div>
            <div class="desc">
@@ -165,7 +165,7 @@
        <div class="grade">
                <div class="per">99.6%</div>
                <div class="dot">
-                   <img src="images/more.png" alt="">
+                   <img src="../images/more.png" alt="">
                </div>
            </div>
            <div class="desc">
@@ -177,7 +177,7 @@
        <div class="grade">
                <div class="per">99.6%</div>
                <div class="dot">
-                   <img src="images/more.png" alt="">
+                   <img src="../images/more.png" alt="">
                </div>
            </div>
            <div class="desc">

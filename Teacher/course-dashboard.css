@@ -1,0 +1,10 @@
+.desc{
+    background-color: #f4f4f4;
+    border-bottom: #f4f4f42d;
+}
+
+.desc :focus{
+ background-color: black;
+ cursor: pointer;
+ color:white;   
+}

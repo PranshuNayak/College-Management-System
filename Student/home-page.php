@@ -43,6 +43,7 @@
 
 </head>
 <body>
+    <?php session_start() ?>
 
         <?php 
             require 'navbar.php';
@@ -54,12 +55,12 @@
             </div>
             <div class="welcome">
                 <div>
-                    <h1>Welcome
+                    <h1>Welcome <?php echo $_SESSION['name'] ?>
                         <br>Here's some quick tips to get you started!
                     </h1>
                     <ul>
                         <li>Click on the Courses Tab to access all your courses</li>
-                        <li>Complete Your remaining tasks by visiting the To-Do Section</li>
+                        <li>Complete Your remaining tasks by visiting the Assignment Section</li>
                         <li>View Your Account Information in the Account Section</li>
                     </ul>
                 </div>

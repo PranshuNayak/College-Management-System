@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="courses-dashboard.css">
     <style>
       body {
         display: flex;
@@ -47,10 +48,16 @@
           display:flex;
           width: 100%;
           justify-content: space-evenly;
+          border-bottom:0.5px solid #f4f4f4;
       }
 
       h3{
         text-align:center;
+      }
+
+      .head{
+        background-color:black;
+        color:white;
       }
     </style>
   </head>
@@ -64,8 +71,8 @@
 
       <div class="course-desc">
 
-        <div class="desc">
-            <div class="snum">S.NO.</div>
+        <div class="desc head">
+            <div class="snum">#</div>
             <div class="cname">Course Name.</div>
             <div class="cid">Course ID</div>
             <div class="year">Year</div>
