@@ -58,6 +58,7 @@
        input{
          border: none;
          border-bottom: 0.5px solid black;
+         margin-top:3px;
        }
 
        input[type="submit"]{
@@ -80,9 +81,11 @@
        <div class="form">
          <div><h3>Issue Assignment</h3></div>
          <div><input type="text" name="Course_id" placeholder="Course_Id" required></div>
-         <div><input type="text" name="teacher_id" placeholder="Teacher_Id" required></div>
+        
          <div><input type="number" name="semester" placeholder="Semester" required></div>
          <div><input type="number" name="YEAR" placeholder="Year" required></div>
+         <div><textarea name="Assignment_title" cols="61" rows="1" placeholder="Title"></textarea></div>
+         <div><textarea name="Assignment_desc" cols="61" rows="3" placeholder="Content"></textarea></div>
          <div><input type="text" name="drive_material_link" placeholder="Assignment Link" required></div>
          <div><input type="submit" value="Submit" required></div>
        </div>

@@ -72,24 +72,31 @@
     </style>
 </head>
 <body>
+
+      
    
     <?php   require 'navbar.php' ?>
     <div class="content-area">
         <div class="image">
             <img src="../images/cover.jpg" alt="image">
         </div>
-       <div class="form">
-         <div><h3>Make Announcement</h3></div>
-         <div><input type="text" name="Course_id" placeholder="Course_Id" required></div>
-         <div><input type="text" name="teacher_id" placeholder="Teacher_Id" required></div>
+       <form action="insert_annoucement.php" method="post" class="form">
+         
+         <div><h3>Issue Annoucement</h3></div>
+         <div><input type="text" name="cid" placeholder="Course_Id" required></div>
+        
          <div><input type="number" name="semester" placeholder="Semester" required></div>
-         <div><input type="number" name="YEAR" placeholder="Year" required></div>
-         <div><textarea name="Announcement_File" cols="61" rows="3" placeholder="Content"></textarea></div>
+         <div><input type="number" name="year" placeholder="Year" required></div>
+         <div><textarea name="title" cols="61" rows="1" placeholder="Title"></textarea></div>
+         <div><textarea name="desc" cols="61" rows="3" placeholder="Content"></textarea></div>
+         <div><input type="text" name="material_link" placeholder="Annoucement Link" required></div>
          <div><input type="submit" value="Submit" required></div>
-       </div>
+         
+      </form>
       </div>
-           
+       
 
     <?php require '../footer.php' ?>
+  
 </body>
 </html>

@@ -85,6 +85,7 @@
           <div class="cid">CS2004</div>
           <div class="year">2021</div>
           <div class="semester">3</div>
+          
         </div>
 
         <div class="desc">
@@ -138,5 +139,6 @@
     </div>
 
     <?php require '../footer.php' ?>
+    
   </body>
 </html>

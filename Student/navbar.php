@@ -35,7 +35,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="course-dashboard.php">Courses</a>
-                      <a class="dropdown-item" href="register_courses.php" disabled>Register</a>
+                      <a class="dropdown-item" href="register_courses.php">Register</a>
                     </div>
                   </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
