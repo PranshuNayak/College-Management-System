@@ -35,7 +35,7 @@
        }
 
        .form{
-         grid-row: 2/4;
+         grid-row: 1/4;
          grid-column: 5/-1;
          display: flex;
          align-content: center;
@@ -83,18 +83,21 @@
        <form action="insert_annoucement.php" method="post" class="form">
          
          <div><h3>Issue Annoucement</h3></div>
-         <div><input type="text" name="cid" placeholder="Course_Id" required></div>
+         <div><input type="text" name="cid" placeholder="Course_ID" value="<?php echo $_POST['cid'] ?>" readonly="readonly"  ></div>
         
-         <div><input type="number" name="semester" placeholder="Semester" required></div>
-         <div><input type="number" name="year" placeholder="Year" required></div>
-         <div><textarea name="title" cols="61" rows="1" placeholder="Title"></textarea></div>
-         <div><textarea name="desc" cols="61" rows="3" placeholder="Content"></textarea></div>
-         <div><input type="text" name="material_link" placeholder="Annoucement Link" required></div>
+         <div><input type="number" name="semester" placeholder="Semester" value="<?php echo $_POST['sem'] ?>" readonly="readonly"></div>
+         <div><input type="number" name="year" placeholder="Year" value="<?php echo $_POST['year'] ?>"  readonly="readonly"></div>
+         <div><textarea name="title" cols="61" rows="1" placeholder="Title" required></textarea></div>
+         <div><textarea name="desc" cols="61" rows="3" placeholder="Content" required></textarea></div>
+         
+         
          <div><input type="submit" value="Submit" required></div>
          
       </form>
       </div>
        
+ 
+    
 
     <?php require '../footer.php' ?>
   

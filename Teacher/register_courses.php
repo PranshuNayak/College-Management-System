@@ -71,23 +71,22 @@
     </style>
 </head>
 <body>
-   
+   <?php session_start() ?>
     <?php   require 'navbar.php' ?>
     <div class="content-area">
         <div class="image">
             <img src="../images/cover.jpg" alt="image">
         </div>
-       <div class="form">
+       <form action="insert_course.php" method="POST" class="form">
          <div><h3>Register Here!</h3></div>
          
-         <div><input type="text" name="Registration Number" placeholder="PF Number" required></div>
-         <div><input type="text" name="Course Name" placeholder="Course Name" required></div>
-         <div><input type="text" name="Course ID" placeholder="Course ID" required></div>
+         <div><input type="text" name="id" value="<?php echo $_SESSION['id']?>" readonly="readonly"></div>
+         <div><input type="text" name="cid" placeholder="Course ID" required></div>
          <div><input type="text" name="year" placeholder="Year" required></div>
-         <div><input type="text" name="sem" placeholder="Smester" required></div>
+         <div><input type="text" name="sem" placeholder="Semester" required></div>
          <div><input type="submit" value="Register" required></div>
        </div>
-      </div>
+      </form>
            
 
     <?php require '../footer.php' ?>

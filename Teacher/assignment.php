@@ -35,7 +35,7 @@
        }
 
        .form{
-         grid-row: 2/4;
+         grid-row: 1/4;
          grid-column: 5/-1;
          display: flex;
          align-content: center;
@@ -78,17 +78,18 @@
         <div class="image">
             <img src="../images/cover.jpg" alt="image">
         </div>
-       <div class="form">
+        <form action="insert_assignment.php" method="post" class="form">
          <div><h3>Issue Assignment</h3></div>
-         <div><input type="text" name="Course_id" placeholder="Course_Id" required></div>
+         <div><input type="text" name="cid" placeholder="Course_Id" value="<?php echo $_POST['cid'] ?>" readonly="readonly"></div>
         
-         <div><input type="number" name="semester" placeholder="Semester" required></div>
-         <div><input type="number" name="YEAR" placeholder="Year" required></div>
-         <div><textarea name="Assignment_title" cols="61" rows="1" placeholder="Title"></textarea></div>
-         <div><textarea name="Assignment_desc" cols="61" rows="3" placeholder="Content"></textarea></div>
-         <div><input type="text" name="drive_material_link" placeholder="Assignment Link" required></div>
-         <div><input type="submit" value="Submit" required></div>
-       </div>
+         <div><input type="number" name="sem" placeholder="Semester" value="<?php echo $_POST['sem'] ?>" readonly="readonly"></div>
+         <div><input type="number" name="year" placeholder="Year" value="<?php echo $_POST['year'] ?>" readonly="readonly"></div>
+         <div><textarea name="title" cols="61" rows="1" placeholder="Title" required></textarea></div>
+         <div><textarea name="desc" cols="61" rows="3" placeholder="Content" required></textarea></div>
+         <div>Deadline<input type="date" name="deadline"></div>
+         <div><input type="text" name="link" placeholder="Assignment Link"></div>
+         <div><input type="submit" value="Submit"></div>
+      </form>
       </div>
            
 

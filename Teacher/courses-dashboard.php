@@ -16,7 +16,7 @@
       .content-area {
         display: grid;
         width: 95vw;
-        height: 70vh;
+        min-height: 70vh;
         padding: 10px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -37,16 +37,16 @@
         grid-column: 2/3;
         grid-row: 1/3;
         width: 100%;
-        height: 100%;
         display: flex;
+        flex-direction:column;
         border: 2px solid rgba(59, 54, 54, 0.068);
-        flex-direction: column;
-        justify-content: space-between;
       }
+
 
       .desc{
           display:flex;
-          width: 100%;
+  
+          margin:7px 0px;
           justify-content: space-evenly;
           border-bottom:0.5px solid #f4f4f4;
       }
@@ -55,13 +55,17 @@
         text-align:center;
       }
 
-      .head{
+      
+
+      .header{
         background-color:black;
         color:white;
+        
       }
     </style>
   </head>
   <body>
+    <?php session_start(); ?>
     <?php   require 'navbar.php' ?>
     <div><h3>Courses You teach</h3></div>
     <div class="content-area">
@@ -70,75 +74,127 @@
       </div>
 
       <div class="course-desc">
-
-        <div class="desc head">
-            <div class="snum">#</div>
-            <div class="cname">Course Name.</div>
-            <div class="cid">Course ID</div>
-            <div class="year">Year</div>
-            <div class="semester">Semester</div>
-          </div>
-
-        <div class="desc">
-            <div class="snum">1</div>
-          <div class="cname">DBMS</div>
-          <div class="cid">CS2004</div>
-          <div class="year">2021</div>
-          <div class="semester">3</div>
-          
+      <div class="desc header">
+            <div class="snum">S.No</div>
+          <div class="cname">Course Name</div>
+          <div class="cid">Course ID</div>
+          <div class="year">Year</div>
+          <div class="semester">Semester</div>
         </div>
 
-        <div class="desc">
-            <div class="snum">2</div>
-          <div class="cname">DBMS</div>
-          <div class="cid">CS2004</div>
-          <div class="year">2021</div>
-          <div class="semester">3</div>
-        </div>
-
-        <div class="desc">
-            <div class="snum">2</div>
-          <div class="cname">DBMS</div>
-          <div class="cid">CS2004</div>
-          <div class="year">2021</div>
-          <div class="semester">3</div>
-        </div>
-
-        <div class="desc">
-            <div class="snum">3</div>
-          <div class="cname">DBMS</div>
-          <div class="cid">CS2004</div>
-          <div class="year">2021</div>
-          <div class="semester">3</div>
-        </div>
-
-        <div class="desc">
-            <div class="snum">4</div>
-          <div class="cname">DBMS</div>
-          <div class="cid">CS2004</div>
-          <div class="year">2021</div>
-          <div class="semester">3</div>
-        </div>
-
-        <div class="desc">
-            <div class="snum">5</div>
-          <div class="cname">DBMS</div>
-          <div class="cid">CS2004</div>
-          <div class="year">2021</div>
-          <div class="semester">3</div>
-        </div>
-
-        <div class="desc">
-            <div class="snum">6</div>
-          <div class="cname">DBMS</div>
-          <div class="cid">CS2004</div>
-          <div class="year">2021</div>
-          <div class="semester">3</div>
-        </div>
+        <?php 
+        
+        $tid = $_SESSION['id'];
+        $connection = mysqli_connect("localhost","root","","dbms_project") or die(mysqli_error($connection));
+        $query = "SELECT * FROM COURSE_TAUGHT WHERE teacher_id='$tid'";
+        $count=0;
+        $res = mysqli_query($connection,$query) or die(mysqli_error($connection));
+        while($row=mysqli_fetch_assoc($res)){
+          $count++;
+          $course = $row['course'];
+          $cdetails = explode("/",$course);
+          $cid = $cdetails[0];
+          $sem = $cdetails[1];
+          $year = $cdetails[2];
+          $query_cname = "SELECT course_name FROM COURSES WHERE course='$course'";
+          $res_cname = mysqli_query($connection,$query_cname);
+          $row_cname = mysqli_fetch_assoc($res_cname);
+          $cname = $row_cname['course_name'];
+          $rowId = "row".$count;
+          echo "<div class='desc' id='$rowId'>";
+          echo "<div class='snum'>$count</div>";
+          echo "<div class='cname rowdata'>$cname</div>";
+          echo "<div class='cid'>$cid</div>";
+          echo "<div class='year'>$year</div>";
+          echo "<div class='semester'>$sem</div>";
+          echo "<button class='annoucement' onclick='sendAN($rowId)'>Make Annoucement</button>";
+          echo "<button class='assignment' onclick='sendAS($rowId)' >Make Assignment</button>";
+          echo "</div>";
+        }
+        ?>
       </div>
     </div>
 
     <?php require '../footer.php' ?>
     
   </body>
+  <script>
+    sendAN = (course)=>{
+      let course_details = course.childNodes;
+      let cid = course_details[2].innerHTML;
+      let year = course_details[3].innerHTML;
+      let semester = course_details[4].innerHTML;
+      
+      let form = document.createElement('form');
+      form.setAttribute("action","announcement.php");
+      form.setAttribute("method","post");
+
+      let cID = document.createElement('input');
+      cID.setAttribute("type","text");
+      cID.setAttribute("name","cid");
+      cID.setAttribute("value",cid);
+      
+      let yr = document.createElement('input');
+      yr.setAttribute("type","number");
+      yr.setAttribute("name","year");
+      yr.setAttribute("value",year);
+
+      let sem = document.createElement('input');
+      sem.setAttribute("type","number");
+      sem.setAttribute("name","sem");
+      sem.setAttribute("value",semester);
+
+      let submit = document.createElement('input');
+      submit.setAttribute("type","submit");
+      
+      
+      form.append(cID);
+      form.append(yr);
+      form.append(sem);
+      form.append(submit);
+      form.style.display="none";
+      document.body.append(form);
+      submit.click();
+
+    }
+
+    sendAS = (course)=>{
+      let course_details = course.childNodes;
+      let cid = course_details[2].innerHTML;
+      let year = course_details[3].innerHTML;
+      let semester = course_details[4].innerHTML;
+      
+      let form = document.createElement('form');
+      form.setAttribute("action","assignment.php");
+      form.setAttribute("method","post");
+
+      let cID = document.createElement('input');
+      cID.setAttribute("type","text");
+      cID.setAttribute("name","cid");
+      cID.setAttribute("value",cid);
+      
+      let yr = document.createElement('input');
+      yr.setAttribute("type","number");
+      yr.setAttribute("name","year");
+      yr.setAttribute("value",year);
+
+      let sem = document.createElement('input');
+      sem.setAttribute("type","number");
+      sem.setAttribute("name","sem");
+      sem.setAttribute("value",semester);
+
+      let submit = document.createElement('input');
+      submit.setAttribute("type","submit");
+      
+      
+      form.append(cID);
+      form.append(yr);
+      form.append(sem);
+      form.append(submit);
+      form.style.display="none";
+      document.body.append(form);
+      submit.click();
+
+    }
+  </script>
 </html>
