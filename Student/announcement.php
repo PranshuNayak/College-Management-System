@@ -33,6 +33,7 @@
                 <li><a href="#">clubs</a></li>
             </ul>
         </nav> -->
+        <?php session_start() ?>;
         <?php
             require 'navbar.php';
         ?>
@@ -49,148 +50,11 @@
     </header>
 
     <section class="questions">
-
-        <!-- questions -->
-        <!-- <div class="section-center"> -->
-        <!-- single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-     
-    
-        <!-- </div> -->
+    <?php 
+                $id = $_SESSION['id'];
+                $con = mysqli_connect("localhost","root","","dbms_project") or die("Can't Connect to DB");
+    ?>
+        
     </section>
     <script src="./announcement.js"></script>
 </body>
