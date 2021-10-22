@@ -53,6 +53,41 @@
     <?php 
                 $id = $_SESSION['id'];
                 $con = mysqli_connect("localhost","root","","dbms_project") or die("Can't Connect to DB");
+                $query = "SELECT * FROM ANNOUCEMENT WHERE course IN (SELECT course FROM COURSE_STUDENT WHERE student_id='$id')";
+                $res = mysqli_query($con,$query);
+                while($row = mysqli_fetch_assoc($res)){
+
+                    $course = $row['course'];
+                    $title = $row['TITLE'];
+                    $description = $row['DESCRIPTION'];
+                    $query_cname = "SELECT course_name FROM COURSES WHERE course='$course'";
+                    $res_cname = mysqli_query($con,$query_cname);
+                    $row_cname = mysqli_fetch_assoc($res_cname);
+                    $cname = $row_cname['course_name'];
+                    $date = $row['annoucement_day'];
+                    $time = $row['annoucement_time'];
+                    $cdetails = explode("/",$course);
+                    echo "<article class='question'>";
+                    echo "<div class='question-title'>";
+                    echo "<div class='date&course'>";
+                    echo "<p>$date - $time </p>";
+                    echo "<p>$cdetails[0] - $cname</p>";
+                    echo "</div>";
+                    echo "<p>$title</p>";
+                    echo "<button type='button' class='question-btn'>";
+                    echo ' <span class="plus-icon">';
+                    echo '<i class="far fa-plus-square"></i>';
+                    echo ' </span>';
+                    echo '<span class="minus-icon">';
+                    echo '<i class="far fa-minus-square"></i>';
+                    echo ' </span>';
+                    echo '</button>';
+                    echo "</div>";
+                    echo '<div class="question-text ">';
+                    echo "<p>$description</p>";
+                    echo '</div>';
+                    echo "</article>";
+                }
     ?>
         
     </section>
