@@ -33,6 +33,7 @@
                 <li><a href="#">clubs</a></li>
             </ul>
         </nav> -->
+        <?php session_start(); ?>
         <?php
         require 'navbar.php';
         ?>
@@ -49,146 +50,50 @@
 
     <section class="questions">
 
-        <!-- questions -->
-        <!-- <div class="section-center"> -->
-        <!-- single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
-        <article class="question">
-            <!-- question title -->
-            <div class="question-title">
-                <div class="date&course">
-                    <p>September 9</p>
-                    <p>CS2001-Data Sructure</p>
-                </div>
-                <p>Data Structure Enrollment Form</p>
-                <button type="button" class="question-btn">
-                    <span class="plus-icon">
-                        <i class="far fa-plus-square"></i>
-                    </span>
-                    <span class="minus-icon">
-                        <i class="far fa-minus-square"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- question text -->
-            <div class="question-text ">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
-                    repellat reprehenderit.
-                </p>
-            </div>
-        </article>
-        <!-- end of single question -->
+    <?php 
+                $id = $_SESSION['id'];
+                $con = mysqli_connect("localhost","root","","dbms_project") or die("Can't Connect to DB");
+                $query = "SELECT * FROM ASSIGNMENT WHERE course IN (SELECT course FROM COURSE_STUDENT WHERE student_id='$id')";
+                $res = mysqli_query($con,$query);
+                while($row = mysqli_fetch_assoc($res)){
+
+                    $course = $row['course'];
+                    $title = $row['TITLE'];
+                    $link = $row['assignment_link'];
+                    $description = $row['DESCRIPTION'];
+                    $query_cname = "SELECT course_name FROM COURSES WHERE course='$course'";
+                    $res_cname = mysqli_query($con,$query_cname);
+                    $row_cname = mysqli_fetch_assoc($res_cname);
+                    $cname = $row_cname['course_name'];
+                    $date = $row['assignment_day'];
+                    $time = $row['assignment_time'];
+                    $cdetails = explode("/",$course);
+                    echo "<article class='question'>";
+                    echo "<div class='question-title'>";
+                    echo "<div class='date&course'>";
+                    echo "<p>$date - $time </p>";
+                    echo "<p>$cdetails[0] - $cname</p>";
+                    echo "</div>";
+                    echo "<p>$title</p>";
+                    echo "<button type='button' class='question-btn'>";
+                    echo ' <span class="plus-icon">';
+                    echo '<i class="far fa-plus-square"></i>';
+                    echo ' </span>';
+                    echo '<span class="minus-icon">';
+                    echo '<i class="far fa-minus-square"></i>';
+                    echo ' </span>';
+                    echo '</button>';
+                    echo "</div>";
+                    echo '<div class="question-text ">';
+                    echo "<p>$description</p>";
+                    echo "<p>$link</p>";
+                    echo '</div>';
+                    echo "</article>";
+                }
+    ?>
+
+   
         
-        <!-- </div> -->
     </section>
     <script src="./assignment.js"></script>
 </body>
