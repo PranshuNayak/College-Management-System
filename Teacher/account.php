@@ -29,6 +29,7 @@
 </head>
 
 <body>
+  <?php session_start() ?>;
 <?php   require 'navbar.php' ?>
     <div class="container mb-2" >
     <div class="container light-style flex-grow-1 container-p-y">
@@ -45,7 +46,13 @@
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
-                <a class="list-group-item list-group-item-action" href="login.php">Logout</a>
+                <a class="list-group-item list-group-item-action" href="../login.html">
+                  Logout
+                  <?php 
+                  session_abort();
+                  session_unset();
+                  ?>
+                </a>
               </div>
             </div>
             <div class="col-md-9">
@@ -67,56 +74,59 @@
                   <hr class="border-light m-0">
     
                   <div class="card-body">
-                    <div class="form-group">
+                  <div class="form-group">
                       <label class="form-label">Username</label>
-                      <input type="text" class="form-control mb-1" value="" >
+                      &nbsp &nbsp <span><?php echo $_SESSION['name']?></span>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">Name</label>
-                      <input type="text" class="form-control" value="" required>
+                      <label class="form-label">Email</label>
+                      &nbsp &nbsp <span><?php echo $_SESSION['email']?></span>
                     </div>
                     <div class="form-group">
-                      <label class="form-label">E-mail</label>
-                      <input type="email" class="form-control mb-1" value="" required>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Institution</label>
-                      <input type="text" disabled class="form-control" value="IIITDMJ">
+                      <label class="form-label">Unique ID</label>
+                      &nbsp &nbsp <span><?php echo $_SESSION['id']?></span>
                     </div>
                   </div>
     
                 </div>
                 <div class="tab-pane fade" id="account-change-password">
                   <div class="card-body pb-2">
-    
-                    <div class="form-group">
-                      <label class="form-label">Current password</label>
-                      <input type="password" class="form-control">
+                  <form action="update_password.php" method="post">
+                  <div class="form-group">
+                      <label class="form-label" >Current password</label>
+                      <input type="password" name="cur_pas" class="form-control">
                     </div>
     
                     <div class="form-group">
-                      <label class="form-label">New password</label>
-                      <input type="password" class="form-control">
+                      <label class="form-label" >New password</label>
+                      <input type="password" name="new_pas1" class="form-control">
                     </div>
     
                     <div class="form-group">
-                      <label class="form-label">Repeat new password</label>
-                      <input type="password" class="form-control">
+                      <label class="form-label" >Repeat new password</label>
+                      <input type="password" name="new_pas2" class="form-control">
                     </div>
-    
+                    <div class="text-right mt-3">
+          <button type="submit" value="update" class="btn btn-primary">Save changes</button>&nbsp;
+          <button type="submit" value="cancel" class="btn btn-default">Cancel</button>
+        </div>
+                     </form>
                   </div>
                 </div>
                 <div class="tab-pane fade" id="account-info">
                   <div class="card-body pb-2">
     
+                  <form action="update-bio.php" method="post">
                     <div class="form-group">
                       <label class="form-label">Bio</label>
-                      <textarea class="form-control" rows="5">ABCD</textarea>
+                      <textarea class="form-control" rows="5" name="bio"></textarea>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Country</label>
                         <input type="text" disabled class="form-control" value="India">
                     </div>
+                    <button type="Submit" value="update" class="btn btn-primary">Save changes</button>&nbsp;
+                    </form>
     
     
                   </div>
@@ -125,26 +135,18 @@
                 <div class="tab-pane fade" id="account-social-links">
                   <div class="card-body pb-2">
     
-                    <div class="form-group">
-                      <label class="form-label">Twitter</label>
-                      <input type="text" class="form-control" value="https://twitter.com/user">
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Facebook</label>
-                      <input type="text" class="form-control" value="https://www.facebook.com/user">
-                    </div>
+                  <form action="update-links.php" method="post">
                     <div class="form-group">
                       <label class="form-label">Github</label>
-                      <input type="text" class="form-control" value="https://github.com/user">
+                      <input type="text" class="form-control" name="github">
                     </div>
                     <div class="form-group">
                       <label class="form-label">LinkedIn</label>
-                      <input type="text" class="form-control" value="https://www.linkedin.com/in/user">
+                      <input type="text" class="form-control" name="linkedin">
                     </div>
-                    <div class="form-group">
-                      <label class="form-label">Instagram</label>
-                      <input type="text" class="form-control" value="https://www.instagram.com/user">
-                    </div>
+                    <button type="Submit" value="update" class="btn btn-primary">Save changes</button>&nbsp;
+                    </form>
+                    
     
                   </div>
                 </div>
@@ -154,10 +156,7 @@
           </div>
         </div>
     
-        <div class="text-right mt-3">
-          <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
-          <button type="button" class="btn btn-default">Cancel</button>
-        </div>
+        
     
       </div>
     </div>

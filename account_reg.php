@@ -24,7 +24,7 @@ if(isset($_POST['email']) && isset($_POST['name']) && isset($_POST['type']) && i
         }
 
         else{
-            $query = "INSERT INTO TEACHER (teacher_name,teacher_email,teacher_password,teacher_id) VALUES ('$name','$email','$id','$password')";
+            $query = "INSERT INTO TEACHER (teacher_name,teacher_email,teacher_password,teacher_id) VALUES ('$name','$email','$password','$id')";
             $res_ins = mysqli_query($connection,$query) or die("Can't add data");
             echo '<script>alert("Registered Succesfully")</script>';
             require 'login.html';
@@ -47,7 +47,7 @@ if(isset($_POST['email']) && isset($_POST['name']) && isset($_POST['type']) && i
         }
 
         else{
-            $query = "INSERT INTO STUDENT (student_name,student_email,student_password,student_id) VALUES ('$name','$email','$id','$password')";
+            $query = "INSERT INTO STUDENT (student_name,student_email,student_password,student_id) VALUES ('$name','$email','$password','$id')";
             $res_ins = mysqli_query($connection,$query) or die("Can't add data");
             echo '<script>alert("Registered Succesfully")</script>';
             require 'login.html';
