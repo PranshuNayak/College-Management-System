@@ -34,10 +34,13 @@
                       Courses
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="courses-dashboard.php">Courses</a>
+                      <a class="dropdown-item" href="courses-dashboard.php">Your Courses</a>
                       <a class="dropdown-item" href="register_courses.php">Register</a>
                     </div>
                   </li>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <li class="nav-item">
+                    <a class="nav-link" href="course_invitation.php">Course Invitation</a>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
                     <a class="nav-link disabled" href="assignment.php">Assignment</a>
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
