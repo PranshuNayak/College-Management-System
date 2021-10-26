@@ -87,10 +87,7 @@
         
          <div><input type="number" name="semester" placeholder="Semester" value="<?php echo $_POST['sem'] ?>" readonly="readonly"></div>
          <div><input type="number" name="year" placeholder="Year" value="<?php echo $_POST['year'] ?>"  readonly="readonly"></div>
-         <div><h6>Is this a Course Invitation?</h6>
-         <div><input type="radio" name="true">Yes
-         <input type="radio" name="true">No</div>
-        </div>
+         
          
          <div><textarea name="title" cols="61" rows="1" placeholder="Title" required></textarea></div>
          <div><textarea name="desc" cols="61" rows="3" placeholder="Content" required></textarea></div>

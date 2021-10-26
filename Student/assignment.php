@@ -86,7 +86,7 @@
                     echo "</div>";
                     echo '<div class="question-text ">';
                     echo "<p>$description</p>";
-                    echo "<p>$link</p>";
+                   
                     echo '</div>';
                     echo "</article>";
                 }

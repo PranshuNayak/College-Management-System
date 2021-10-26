@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <!-- main css -->
     <link rel="stylesheet" href="./announcement.css" />
+    <style>
+        .details{
+            display:"none";
+        }
+    </style>
 </head>
 
 <body>
@@ -55,8 +60,9 @@
                 $con = mysqli_connect("localhost","root","","dbms_project") or die("Can't Connect to DB");
                 $query = "SELECT * FROM ANNOUCEMENT WHERE course IN (SELECT course FROM COURSE_STUDENT WHERE student_id='$id')";
                 $res = mysqli_query($con,$query);
+                $count=0;
                 while($row = mysqli_fetch_assoc($res)){
-
+                    $count++;
                     $course = $row['course'];
                     $title = $row['TITLE'];
                     $description = $row['DESCRIPTION'];
@@ -72,8 +78,12 @@
                     echo "<div class='date&course'>";
                     echo "<p>$date - $time </p>";
                     echo "<p>$cdetails[0] - $cname</p>";
+                   
+                    
+                    
                     echo "</div>";
-                    echo "<p>$title</p>";
+                  
+                     echo "<p>$title</p>";
                     echo "<button type='button' class='question-btn'>";
                     echo ' <span class="plus-icon">';
                     echo '<i class="far fa-plus-square"></i>';
@@ -88,10 +98,106 @@
                     echo '</div>';
                     echo "</article>";
                 }
+
+                $query1 = "SELECT * FROM COURSE_INVITE WHERE student_id='$id'";
+                $res1 = mysqli_query($con,$query1);
+
+                while($row = mysqli_fetch_assoc($res1)){
+                    $count++;
+                    $course = $row['course'];
+                    $title = $row['TITLE'];
+                    $description = $row['DESCRIPTION'];
+                    $query_cname = "SELECT course_name FROM COURSES WHERE course='$course'";
+                    $res_cname = mysqli_query($con,$query_cname);
+                    $row_cname = mysqli_fetch_assoc($res_cname);
+                    $cname = $row_cname['course_name'];
+                    $date = $row['annoucement_day'];
+                    $time = $row['annoucement_time'];
+                    $cdetails = explode("/",$course);
+                    echo "<article class='question'>";
+                    echo "<div class='question-title'>";
+                    echo "<div class='date&course'>";
+                    echo "<p>$date - $time </p>";
+                    echo "<p>$cdetails[0] - $cname</p>";
+                    echo "<p id='$count' style:'display:none';>$course-$id</p>";
+                    echo "<button onclick='sendInfo($count)'>Accept Invite</button>";
+                    
+                    echo "</div>";
+                  
+                     echo "<p>$title</p>";
+                    echo "<button type='button' class='question-btn'>";
+                    echo ' <span class="plus-icon">';
+                    echo '<i class="far fa-plus-square"></i>';
+                    echo ' </span>';
+                    echo '<span class="minus-icon">';
+                    echo '<i class="far fa-minus-square"></i>';
+                    echo ' </span>';
+                    echo '</button>';
+                    echo "</div>";
+                    echo '<div class="question-text ">';
+                    echo "<p>$description</p>";
+                    echo '</div>';
+                    echo "</article>";
+                }
+
+
+
     ?>
         
     </section>
     <script src="./announcement.js"></script>
+    <script>
+        let sendInfo = (id)=>{
+           let detail = document.getElementById(id).innerHTML;
+           let sep = detail.split("-");
+           let cdetails = sep[0].split("/");
+           let cid = cdetails[0];
+           let sem = cdetails[1];
+           let year = cdetails[2];
+           let sid = sep[1];
+
+           let form = document.createElement('form');
+          form.setAttribute('action','register_course.php');
+          form.setAttribute('method','POST');
+          
+          let Cid = document.createElement('input');
+          Cid.setAttribute('type','text');
+          Cid.setAttribute('value',cid);
+          Cid.setAttribute('name','cid');
+
+          let Sem = document.createElement('input');
+          Sem.setAttribute('type','text');
+          Sem.setAttribute('value',sem);
+          Sem.setAttribute('name','sem');
+
+          let Year = document.createElement('input');
+          Year.setAttribute('type','text');
+          Year.setAttribute('value',year);
+          Year.setAttribute('name','year');
+
+          let Sid = document.createElement('input');
+          Sid.setAttribute('type','text');
+          Sid.setAttribute('value',sid);
+          Sid.setAttribute('name','sid');
+
+
+
+          
+          let submit = document.createElement('input');
+          submit.setAttribute('type','submit');
+          
+            
+          form.append(Cid);
+          form.append(Sem);
+          form.append(Year);
+          form.append(Sid);
+          form.append(submit);
+         
+          form.style.display="none";
+          document.body.append(form);
+          submit.click();
+        }
+    </script>
 </body>
 <footer>
     <?php

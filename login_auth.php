@@ -10,6 +10,18 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         $s = 0;
 
     $connection = mysqli_connect("localhost","root","","dbms_project") or die("Can't connect to database to fetch info");
+
+    $query_admin = "SELECT * FROM ADMIN";
+    $res_admin = mysqli_query($connection,$query_admin) or die(mysqli_error());
+    while($row=mysqli_fetch_assoc($res_admin)){
+      
+        if($row['admin_password']==$password && $row['admin_email']==$email){
+            echo "<script>window.location.href='admin/home-page.php'</script>";
+            die();
+        }
+    }
+        
+    
     $query_stu = "SELECT student_email,student_password,student_name,student_id FROM STUDENT";
     $result_stu = mysqli_query($connection,$query_stu) or die("Unable to fetch your query");
    

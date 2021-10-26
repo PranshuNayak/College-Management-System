@@ -29,22 +29,15 @@
                 <li class="nav-item">
                     <a class="nav-link " href="account.php">Account</a>
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Courses
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="course-dashboard.php">Course Dasboard</a>
-                      <a class="dropdown-item disabled" href="register_course.php">Course Register</a>
-                    </div>
-                    
-                  </li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li class="nav-item">
-                    <a class="nav-link" href="assignment.php">Assignment</a>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="admit_course.php">Course Requests</a>
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
+
                 <li class="nav-item">
-                    <a class="nav-link" href="announcement.php">Announcement</a>
-                </li>
+                    <a class="nav-link" href="add_course.php">Add Course</a>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;
+                
             </ul>
         </div>
     </nav>
