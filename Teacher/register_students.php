@@ -4,7 +4,7 @@ if(isset($_POST['course']) && isset($_POST['sids'])){
     $con = mysqli_connect("localhost","root","","dbms_project") or die(mysqli_error($con));
     $course = ($_POST['course']);
     $students = $_POST['sids'];
-
+    $dateobj = getdate();
     $date = $dateobj['mday']."/".$dateobj['mon']."/".$dateobj['year'];
         $time = $dateobj['hours'].":".$dateobj['minutes'].":".$dateobj['seconds'];
         $title = "Course Inviation";

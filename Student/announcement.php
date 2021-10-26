@@ -53,7 +53,6 @@
             </div>
         </div>
     </header>
-
     <section class="questions">
     <?php 
                 $id = $_SESSION['id'];
@@ -119,7 +118,7 @@
                     echo "<div class='date&course'>";
                     echo "<p>$date - $time </p>";
                     echo "<p>$cdetails[0] - $cname</p>";
-                    echo "<p id='$count' style:'display:none';>$course-$id</p>";
+                    echo "<p id='$count' style='display:none'>$course-$id</p>";
                     echo "<button onclick='sendInfo($count)'>Accept Invite</button>";
                     
                     echo "</div>";
