@@ -45,7 +45,7 @@
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
-                <a class="list-group-item list-group-item-action" href="login.php">Logout</a>
+                <a class="list-group-item list-group-item-action" href="../login.html">Logout</a>
               </div>
             </div>
             <div class="col-md-9">

@@ -84,7 +84,7 @@
          <div><input type="text" name="Course Name" placeholder="Course Name" required></div>
          <div><input type="text" name="Course ID" placeholder="Course ID" required></div>
          <div><input type="text" name="year" placeholder="Year" required></div>
-         <div><input type="text" name="sem" placeholder="Smester" required></div>
+         <div><input type="text" name="sem" placeholder="Semester" required></div>
          <div><input type="submit" value="Register" required></div>
        </div>
       </div>
