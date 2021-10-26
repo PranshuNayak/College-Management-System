@@ -25,6 +25,7 @@
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0" id="navigation">
                 <li class="nav-item">
                     <a class="nav-link " aria-current="page" href="home-page.php">Home</a>
+                    
                 </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
                     <a class="nav-link " href="account.php">Account</a>
@@ -58,5 +59,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script>
+   let a_tags = document.querySelectorAll('a');
+   let loc = window.location.href;
+   for (let i = 0; i < a_tags.length; i++) {
+       let href = a_tags[i].getAttribute('href');
+        if(loc.indexOf(href)!=-1){
+            a_tags[i].style.color="blue";
+           
+        }
 
+        else{
+            a_tags[i].style.color="black";
+        }
+       
+   }
+</script>
 </html>

@@ -46,7 +46,7 @@
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
-<<<<<<< HEAD
+
                 <a class="list-group-item list-group-item-action" href="../login.html">
                   Logout
                   <?php 
@@ -54,9 +54,6 @@
                   session_unset();
                   ?>
                 </a>
-=======
-                <a class="list-group-item list-group-item-action" href="../login.html">Logout</a>
->>>>>>> 53673dbd9fa984971d6549f639fcdc3e12c13d1c
               </div>
             </div>
             <div class="col-md-9">

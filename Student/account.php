@@ -55,7 +55,6 @@
                   ?>
                 </a>
 
-                <a class="list-group-item list-group-item-action" href="../login.html">Logout</a>
 
               </div>
             </div>
