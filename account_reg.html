@@ -1,66 +1,85 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-up Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="sign up.css">
+	<title>Sign-up</title>
+   
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="sign up.css">
 </head>
-
 <body>
-    <form action="account_reg.php" method="POST">
-        <div class="container">
-            <div class="tittle">
+<form action="account_reg.php" method="POST">
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
                 <div class="logo">
                     <img src="images/iiitdmj-icon.jpg" alt="logo">
                     &nbsp &nbsp &nbsp <h3>IIITDM Jabalpur</h3>
-                </div>
-
-            </div>
-            <div class="formatting" id="user">
-                User Registration
-            </div>
-            	<div class="credential">
-                <div id="Name">
-                    <label for="">Name</label><br>
-                    <input style="width:420px" type="text" name="name" class="name" required>
-                    
-                </div>
-                <div id="Email">
-                    <label for="email">Email</label><br>
-                    <input type="email" name="email" id="email"  required>
-                </div>
-                <div id="Profession">
-                    <label for="account-type">Profession</label><br>
-                    <select name="type" id="account-type">
-                        <option value="0" >Select Account Type</option>
-                        <option value="1">Teacher</option>
-                        <option value="2">Student</option>
-                    </select>
-                </div>
-                <div id="Email">
-                    <label for="r_no">Institution Id</label><br>
-                    <input type="text" name="id_no" id="r_no" placeholder="Roll Number/PF Number" required>
-                </div>
-                <div id="Password">
-                    <label for="password">Password</label><br>
-                    <input type="password" name="password" id="password"  required>
-                </div>
-            </div>
-            <div class="log_in">
-                
-                <button type="submit" value="Log in" id="btn">Register</button>
-
-            </div>
-        </div>
-    </form>
-    
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Name" name="name" required>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="email" class="form-control" placeholder="Email" name="email" required>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+                        <select name="type" id="account-type" style="width: 289px;height: 39px;">
+                            <option value="0" >Select Account Type</option>
+                            <option value="1">Teacher</option>
+                            <option value="2">Student</option>
+                        </select>
+						
+					</div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Roll Number/PF Number" name="id_no" required>
+                    </div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="Password" name="password" required>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Register" class="btn float-right login_btn">
+					</div><br><br>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Have already an account?<a href="login.html">Login here</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
 </body>
 <script>
     document.querySelector('select').addEventListener('click',()=>{
@@ -68,4 +87,4 @@
         option[0].disabled="true";
             })
 </script>
-</html> 
+</html>
