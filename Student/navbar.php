@@ -34,9 +34,10 @@
                       Courses
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="course-dashboard.php">Courses</a>
-                      <a class="dropdown-item" href="register_courses.php">Register</a>
+                      <a class="dropdown-item" href="course-dashboard.php">Course Dasboard</a>
+                      <a class="dropdown-item disabled" href="register_course.php">Course Register</a>
                     </div>
+                    
                   </li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
                     <a class="nav-link" href="assignment.php">Assignment</a>

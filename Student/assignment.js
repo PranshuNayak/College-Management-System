@@ -15,12 +15,11 @@ const getElement = (selector, list) => {
   // traversing the dom
   const btns = getElement('.question-btn', true);
 //   const title = getElement('.title');
-  
-  btns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      const question = e.currentTarget.parentElement.parentElement;
-  
-      question.classList.toggle('show-text');
-    });
-  });
+
+btns.forEach(btn => {
+  btns.addEventListener('click',()=>{
+    const question = e.currentTarget.parentElement.parentElement;
+    question.classList.toggle('show-text');
+   })
+ });
   

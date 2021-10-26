@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Comtextble" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Registration</title>
+    <title>Make Announcement</title>
     <style>
 
         body{
@@ -35,7 +35,7 @@
        }
 
        .form{
-         grid-row: 2/4;
+         grid-row: 1/4;
          grid-column: 5/-1;
          display: flex;
          align-content: center;
@@ -68,26 +68,38 @@
        input:focus{
          outline: none;
        }
+
     </style>
 </head>
 <body>
+
+      
    
     <?php   require 'navbar.php' ?>
     <div class="content-area">
         <div class="image">
             <img src="../images/cover.jpg" alt="image">
         </div>
-       <div class="form">
-         <div><h3>Register Here!</h3></div>
-         <div><input type="text" name="Name" placeholder="Name" required></div>
-         <div><input type="text" name="Registration Number" placeholder="Registration Number" required></div>
-         <div><input type="text" name="Course Name" placeholder="Course Name" required></div>
-         <div><input type="text" name="Course ID" placeholder="Course ID" required></div>
+       <form action="insert_course.php" method="post" class="form">
+         
+         <div><h3>Course Registration</h3></div>
+         <div><input type="text" name="cid" placeholder="Course_details" value="<?php echo $_POST['cid'] ?>" readonly="readonly"  ></div>
+        
+         <div><input type="number" name="sem" placeholder="Semester" value="<?php echo $_POST['sem'] ?>" readonly="readonly"></div>
+         <div><input type="number" name="year" placeholder="Year" value="<?php echo $_POST['year'] ?>"  readonly="readonly"></div>
+         
+         <div><input type="text" name="sid" placeholder="Course_details" value="<?php echo $_POST['sid'] ?>" readonly="readonly"  ></div>
+         
+         
          <div><input type="submit" value="Register" required></div>
-       </div>
+         
+      </form>
       </div>
-           
+       
+ 
+    
 
     <?php require '../footer.php' ?>
+  
 </body>
 </html>

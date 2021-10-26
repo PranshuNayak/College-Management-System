@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Comtextble" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Make Announcement</title>
     <style>
 
         body{
@@ -35,7 +35,7 @@
        }
 
        .form{
-         grid-row: 2/4;
+         grid-row: 1/4;
          grid-column: 5/-1;
          display: flex;
          align-content: center;
@@ -68,27 +68,38 @@
        input:focus{
          outline: none;
        }
+
     </style>
 </head>
 <body>
-   <?php session_start() ?>
+
+      
+   
     <?php   require 'navbar.php' ?>
     <div class="content-area">
         <div class="image">
             <img src="../images/cover.jpg" alt="image">
         </div>
-       <form action="../admin/review_registration.php" method="POST" class="form">
-         <div><h3>Register Here!</h3></div>
+       <form action="insert_course.php" method="post" class="form">
          
-         <div><input type="text" name="id" value="<?php echo $_SESSION['id']?>" readonly="readonly"></div>
-         <div><input type="text" name="cid" placeholder="Course ID" required></div>
-         <div><input type="text" name="year" placeholder="Year" required></div>
-         <div><input type="text" name="sem" placeholder="Semester" required></div>
-         <div><input type="submit" value="Register" required></div>
-       </div>
+         <div><h3>Add Course</h3></div>
+         <div><input type="text" name="cid" placeholder="Course_ID" ></div>
+         <div><input type="text" name="cname" placeholder="Course Name"></div>
+        
+         <div><input type="number" name="semester" placeholder="Semester" ></div>
+         <div><input type="number" name="year" placeholder="Year"></div>
+         
+         
+         
+         <div><input type="submit" value="Add Course" required></div>
+         
       </form>
-           
+      </div>
+       
+ 
+    
 
     <?php require '../footer.php' ?>
+  
 </body>
 </html>

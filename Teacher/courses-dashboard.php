@@ -109,6 +109,7 @@
           echo "<div class='semester'>$sem</div>";
           echo "<button class='annoucement' onclick='sendAN($rowId)'>Make Annoucement</button>";
           echo "<button class='assignment' onclick='sendAS($rowId)' >Make Assignment</button>";
+          echo "<button class='sDetails' onclick='sendSP($rowId)'>Student Performance</button>";
           echo "</div>";
         }
         ?>
@@ -119,7 +120,32 @@
     
   </body>
   <script>
-    sendAN = (course)=>{
+
+        let sendSP = (course)=>{
+          console.log("hello");
+
+          let cdetails = course.childNodes;
+          let key = cdetails[2].innerHTML+"/"+cdetails[4].innerHTML+"/"+cdetails[3].innerHTML;
+          let form = document.createElement('form');
+          form.setAttribute('action','student_performance.php');
+          form.setAttribute('method','POST');
+          let input = document.createElement('input');
+          input.setAttribute('type','text');
+          input.setAttribute('name','cdetails');
+          input.setAttribute('value',key);
+
+          let submit = document.createElement('input');
+          submit.setAttribute('type','submit');
+
+          form.style.display="none";
+
+          form.append(input);
+          form.append(submit);
+          document.body.append(form);
+          submit.click();
+        }
+
+    let sendAN = (course)=>{
       let course_details = course.childNodes;
       let cid = course_details[2].innerHTML;
       let year = course_details[3].innerHTML;
@@ -158,7 +184,7 @@
 
     }
 
-    sendAS = (course)=>{
+    let sendAS = (course)=>{
       let course_details = course.childNodes;
       let cid = course_details[2].innerHTML;
       let year = course_details[3].innerHTML;

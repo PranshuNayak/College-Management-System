@@ -109,12 +109,15 @@
             $res = mysqli_query($connection,$query) or die("Can't retreive query");
             while($row = mysqli_fetch_assoc($res)){
 
-                $course_id = $row['course_id'];
-                $percent = $row['Percent'];
-                $query_1 = "SELECT course_name FROM COURSES WHERE course_id='$course_id'";
-                $res_1 = mysqli_query($connection,$query_1);
-                $row_1 = mysqli_fetch_assoc($res_1);
-                $course_name = $row_1['course_name'];
+                $course = $row['course'];
+                $cDetails = explode("/",$course);
+                $cid = $cDetails[0];
+                $percent = $row['percent'];
+                $grade = $row['grade'];
+                $query1 = "SELECT course_name FROM COURSES WHERE course='$course'";
+                $res1 = mysqli_query($connection,$query1) or die(mysqli_error($connection));
+                $row1 = mysqli_fetch_assoc($res1);
+                $course_name = $row1['course_name'];
 
                 echo "<div class='course-desc'>";
                 echo "<div class='grade'>";
@@ -125,7 +128,7 @@
                 echo "</div>";
                 echo "<div class='desc'>";
                 echo "<div class='cname'>".$course_name."</div>";
-                echo "<div class='cid'>".$course_id."</div>";
+                echo "<div class='cid'>".$cid."</div>";
                 echo "</div>";
                 echo "</div>";
             }
