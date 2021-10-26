@@ -1,53 +1,63 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
-</head>
+	<title>Login Page</title>
+   
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="login.css">
+</head>
 <body>
-    <form action="login_auth.php" method="POST">
-        <div class="container">
-            <div class="tittle">
+<form action="login_auth.php" method="POST">
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
                 <div class="logo">
                     <img src="images/iiitdmj-icon.jpg" alt="logo">
                     &nbsp &nbsp &nbsp <h3>IIITDM Jabalpur</h3>
-                    <!-- <h3>Canvas</h3> -->
-                </div>
-                <div>
-                    <li class="decoration"><a href="account_reg.html">Dont't have a account?</a></li>
-                    <li class="decoration"><a href="account_reg.html"> Sign up</a></li>
-                </div>
-
-            </div>
-            <div class="credencial">
-                <div id="Email">
-                    <label for="email">Email</label><br>
-                    <input type="email" name="email" id="email"  required>
-                </div>
-                <div id="Password">
-                    <label for="password">Password</label><br>
-                    <input type="password" name="password" id="password"  required>
-                </div>
-            </div>
-            <div class="log_in">
-                <div>
-                    <input type="checkbox" name="status" id="stay">
-                    <label for="stay">stay signed in</label>
-                    <!-- <li class="decoration"><a href="#home">Forgot Password?</a></li> -->
-                    <li class="decoration">Welcome to the team</li>
-                </div>
-                <button type="submit" value="Log in" id="btn">Log in</button>
-            </div>
-
-        </div>
-    </form>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="email" class="form-control" placeholder="Email" name="email" required>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="Password" name="password" required>
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox" name="status">Remember Me 
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn">
+					</div><br>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="account_reg.html">Sign Up</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
 </body>
-
 </html>

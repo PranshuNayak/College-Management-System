@@ -59,7 +59,11 @@
                     </h1>
                     <ul>
                         <li>Click on the Courses Tab to access all your courses</li>
+
                         <li>Complete Your remaining tasks by visiting the Assignment Section</li>
+
+                        <li>Complete Your remaining tasks by visiting the Announcement and Assignment Section</li>
+
                         <li>View Your Account Information in the Account Section</li>
                     </ul>
                 </div>
