@@ -29,7 +29,7 @@
 </head>
 
 <body>
-  <?php session_start() ?>;
+  <?php session_start() ?>
 <?php   require 'navbar.php' ?>
     <div class="container mb-2" >
     <div class="container light-style flex-grow-1 container-p-y">
@@ -120,7 +120,7 @@
                   <form action="update-bio.php" method="post">
                     <div class="form-group">
                       <label class="form-label">Bio</label>
-                      <textarea class="form-control" rows="5" name="bio"></textarea>
+                      <textarea class="form-control" rows="5" name="bio"><?php echo $_SESSION['bio']?></textarea>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Country</label>
@@ -139,11 +139,11 @@
                   <form action="update-links.php" method="post">
                     <div class="form-group">
                       <label class="form-label">Github</label>
-                      <input type="text" class="form-control" name="github">
+                      <input type="text" class="form-control" name="github" value="<?php echo $_SESSION['github']?>">
                     </div>
                     <div class="form-group">
                       <label class="form-label">LinkedIn</label>
-                      <input type="text" class="form-control" name="linkedin">
+                      <input type="text" class="form-control" name="linkedin" value="<?php echo $_SESSION['linkedin']?>">
                     </div>
                     <button type="Submit" value="update" class="btn btn-primary">Save changes</button>&nbsp;
                     </form>

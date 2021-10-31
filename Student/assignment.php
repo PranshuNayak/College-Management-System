@@ -55,8 +55,9 @@
                 $con = mysqli_connect("localhost","root","","dbms_project") or die("Can't Connect to DB");
                 $query = "SELECT * FROM ASSIGNMENT WHERE course IN (SELECT course FROM COURSE_STUDENT WHERE student_id='$id')";
                 $res = mysqli_query($con,$query);
+                $count=0;
                 while($row = mysqli_fetch_assoc($res)){
-
+                    $count++;
                     $course = $row['course'];
                     $title = $row['TITLE'];
                     $link = $row['assignment_link'];
@@ -90,6 +91,9 @@
                     echo '</div>';
                     echo "</article>";
                 }
+                if($count==0){
+                    echo '<div class="container text-center"><img src="../images/panda.jpg" width="700px" height="535px"></div>';
+                  }
     ?>
 
    
