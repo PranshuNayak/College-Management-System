@@ -63,7 +63,7 @@
                 <div class="tab-pane fade active show" id="account-general">
     
                   <div class="card-body media align-items-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="d-block ui-w-80">
+                    <img src="../images/profile.jpg" alt="" class="d-block ui-w-80">
                     <div class="media-body ml-4">
                       <label class="btn btn-outline-primary">
                         Upload new photo
@@ -125,7 +125,7 @@
                     <form action="update-bio.php" method="post">
                     <div class="form-group">
                       <label class="form-label">Bio</label>
-                      <textarea class="form-control" rows="5" name="bio"></textarea>
+                      <textarea class="form-control" rows="5" name="bio"><?php echo $_SESSION['bio']?></textarea>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Country</label>
@@ -143,11 +143,11 @@
                     <form action="update-links.php" method="post">
                     <div class="form-group">
                       <label class="form-label">Github</label>
-                      <input type="text" class="form-control" name="github">
+                      <input type="text" class="form-control" name="github" value="<?php echo $_SESSION['github']?>">
                     </div>
                     <div class="form-group">
                       <label class="form-label">LinkedIn</label>
-                      <input type="text" class="form-control" name="linkedin">
+                      <input type="text" class="form-control" name="linkedin" value="<?php echo $_SESSION['linkedin']?>">
                     </div>
                     <button type="Submit" value="update" class="btn btn-primary">Save changes</button>&nbsp;
                     </form>

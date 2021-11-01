@@ -21,8 +21,8 @@
     </style>
   </head>
   <body>
-    <?php session_start() ?>;
-    <?php include 'navbar.php' ?>;
+    <?php session_start() ?>
+    <?php include 'navbar.php' ?>
     <div class="course-invitation">
      <div class="course">
        <div class="sno">S.No</div>
@@ -51,6 +51,9 @@
       echo "<div class='year'>$year</div>";
       echo "<button onclick='makeInvite($count)'>Send Invite</button>";
       echo "</div>";
+    }
+    if($count==0){
+      echo '<div class="container"><img src="../images/panda.jpg" width="700px" height="535px"></div>';
     }
 
 ?>

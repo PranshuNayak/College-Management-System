@@ -38,7 +38,7 @@
                 <li><a href="#">clubs</a></li>
             </ul>
         </nav> -->
-        <?php session_start() ?>;
+        <?php session_start() ?>
         <?php
             require 'navbar.php';
         ?>
@@ -139,7 +139,9 @@
                     echo "</article>";
                 }
 
-
+                if($count==0){
+                    echo '<div class="container text-center"><img src="../images/panda.jpg" width="700px" height="535px"></div>';
+                  }
 
     ?>
         

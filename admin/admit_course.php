@@ -41,7 +41,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
-    <?php include 'navbar.php' ?>;
+    <?php include 'navbar.php' ?>
     <div class="review">
 
     <div class='d-flex'>
@@ -51,7 +51,7 @@
     
 
 
-        <div class="row" style='display:grid;grid-template-columns:repeat(4,1fr);'>
+        <div class="row my-3" style='display:grid;grid-template-columns:repeat(4,1fr);'>
         <div class="sno">S.No</div>
         <div class="course">Course</div>
         <div class="tid">Teacher Id</div>
@@ -75,6 +75,9 @@
                     echo "<div class='id'>$tid</div>";
                     echo "<div class='checkbox'><input class='option' type='checkbox'></div>";
                     echo "</div>";
+                }
+                if($count==0){
+                  echo '<div class="container"><img src="../images/panda.jpg" width="700px" height="535px"></div>';
                 }
             
         ?>
