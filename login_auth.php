@@ -41,8 +41,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     }
 
     if($s==1){
-        echo '<form action="./Student/home-page.php" method="POST"><button type="submit" id="btn"></button></form>';
-    echo '<script>document.addEventListener("DOMContentLoaded",()=>{ document.getElementById("btn").click()})</script>';   
+        echo "<script>window.location.href='./Student/home-page.php'</script>";
 }
 
 
@@ -62,12 +61,11 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 }
 
 if($t==1){
-    echo '<form action="./Teacher/home-page.php" method="POST"><button type="submit" id="btn"></button></form>';
-    echo '<script>document.addEventListener("DOMContentLoaded",()=>{ document.getElementById("btn").click()})</script>';   
+    echo "<script>window.location.href='./Teacher/home-page.php'</script>";
 }
 
 else{ echo "<script>alert('Invalid User')</script>";
-    include 'login.html';
+    echo "<script>window.location.href='login.html'</script>";
 }
 }
 

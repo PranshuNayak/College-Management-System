@@ -124,7 +124,7 @@
                     echo "</div>";
                   
                      echo "<p>$title</p>";
-                    echo "<button type='button' class='question-btn'>";
+                    echo "<button type='button' class='question-btn sideBtn'>";
                     echo ' <span class="plus-icon">';
                     echo '<i class="far fa-plus-square"></i>';
                     echo ' </span>';
@@ -146,7 +146,7 @@
     ?>
         
     </section>
-    <script src="./announcement.js"></script>
+ 
     <script>
         let sendInfo = (id)=>{
            let detail = document.getElementById(id).innerHTML;
@@ -199,6 +199,7 @@
           submit.click();
         }
     </script>
+       <script src="./announcement.js"></script>
 </body>
 <footer>
     <?php

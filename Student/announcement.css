@@ -258,10 +258,10 @@ Questions
   display: none;
 }
 .show-text .minus-icon {
-  display: inline;
+  display: none;
 }
 .show-text .plus-icon {
-  display: none;
+  display: inline;
 }
 
 /* --------------- */

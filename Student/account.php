@@ -31,7 +31,7 @@
 <body>
   <?php session_start() ?>
 <?php   require 'navbar.php' ?>
-    <div class="container mb-2" >
+    <div class="container mb-2" style="height: 83vh;">
     <div class="container light-style flex-grow-1 container-p-y">
 
         <h4 class="font-weight-bold py-3">
