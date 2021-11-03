@@ -58,35 +58,11 @@
       padding: 15px;
     }
 
-    .question-btn {
-      font-size: 1.5rem;
-      background: transparent;
-      border-color: transparent;
-      cursor: pointer;
-      color: var(--gold);
-      transition: var(--transition);
-    }
-
-    .question-btn:hover {
-      /* transform: rotate(90deg); */
-      color: blue;
-    }
-
-    .cname {
-      max-width: 260px;
-      min-width: 150px;
-      box-sizing: border-box;
-      /* border: 2px solid red; */
-      padding: 0px;
-      padding-left: 5px;
-      text-align: left;
-    }
-
     section {
       padding: 10px;
       /* border: 2px solid red; */
       /* position: relative; */
-      min-height: 462px !important;
+      min-height: 453px !important;
       margin-top: 10px;
     }
 
@@ -121,6 +97,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      font-weight: 400;
+    }
+
+    .label-checkbox {
+      border: 0.1px solid black;
+      padding: 2px 12px;
+      margin: 0 11px 0 0;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -158,7 +142,7 @@
           <th class="sno-h">S.No</th>
           <th class="cid-h">Course Id</th>
           <th class="tid-h">Teacher Id</th>
-          <th class="checkbox-h">Approve</th>
+          <th class="checkbox-h">Approve Course</th>
         </tr>
 
         <?php
@@ -176,7 +160,10 @@
           echo "<td class='sno'>$count</td>";
           echo "<td class='cid'>$course</td>";
           echo "<td class='tid'>$tid</td>";
-          echo "<td class='checkbox'><input class='option' type='checkbox'></td>";
+          echo "<td class='checkbox'>
+                    <label for='select-$count' class='label-checkbox'>Select</label>
+                    <input class='option' type='checkbox' id='select-$count'>
+                  </td>";
           echo "</tr>";
         }
         if ($count == 0) {

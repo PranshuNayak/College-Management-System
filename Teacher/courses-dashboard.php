@@ -162,21 +162,15 @@
                     echo "<td class='cid'>$cid</td>";
                     echo "<td class='year'>$year</td>";
                     echo "<td class='semester'>$sem</td>";
-                    echo '<td><button class="question-btn sDetails" onclick="sendAN($rowId)">
-                        <span class="plus-icon">
-                            <i class="fas fa-user-graduate"></i>
-                        </span>
-                    </button></td>';
-                    echo ' <td><button class="question-btn announcement" onclick="sendAN($rowId)">
-                        <span class="plus-icon">
-                            <i class="far fa-plus-square"></i>
-                        </span>
-                    </button></td>';
-                    echo ' <td><button class="question-btn assignment" onclick="sendAN($rowId)">
-                        <span class="plus-icon">
-                            <i class="far fa-plus-square"></i>
-                        </span>
-                    </button></td>';
+                    echo "<td><span class='plus-icon question-btn sDetails'  onclick='sendSP($rowId)'>
+                            <i class='fas fa-user-graduate' ></i>
+                        </span></td>";
+                    echo " <td><span class='plus-icon question-btn announcement' onclick='sendAN($rowId)'>
+                            <i class='far fa-plus-square' ></i>
+                        </span></td>";
+                        echo " <td><span class='plus-icon question-btn assignment' onclick='sendAS($rowId)'>
+                        <i class='far fa-plus-square' ></i>
+                    </span></td>";
                     echo "</tr>";
                 }
                 ?>

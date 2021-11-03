@@ -103,7 +103,7 @@
     </div>
     <form action="insert_annoucement.php" method="post" class="form">
 
-      <div class="collapse">
+      <div class="hidden">
         <h3>Issue Annoucement</h3>
       </div>
       <div><input type="text" name="cid" placeholder="Course_ID" value="<?php echo $_POST['cid'] ?>" readonly="readonly"></div>

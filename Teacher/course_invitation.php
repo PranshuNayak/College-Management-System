@@ -55,7 +55,7 @@
 
     table {
       border-collapse: collapse;
-      width: 65vw;
+      width: 60vw;
       margin-top: 75px;
       margin: auto;
     }
@@ -144,12 +144,12 @@
           echo "<td class='cid'>$cid</td>";
           echo "<td class='sem'>$sem</td>";
           echo "<td class='year'>$year</td>";
-          // echo '<td><button class="question-btn sDetails" onclick="makeInvite($count)">
-          //               <span class="plus-icon">
-          //                   <i class="far fa-plus-square"></i>
+          // echo "<td><button class='question-btn sDetails' onclick='makeInvite($count)'>
+          //               <span class='plus-icon'>
+          //                   <i class='far fa-plus-square'></i>
           //               </span>
-          //           </button></td>';
-          echo '<td> <button class="btn btn-outline-success send" class="sDetails"  onclick="makeInvite($count)">Send</button></td>';
+          //           </button></td>";
+          echo "<td> <button class='btn btn-outline-success send' class='sDetails'  onclick='makeInvite($count)'>Send</button></td>";
           echo "</tr>";
         }
         if($count==0){
