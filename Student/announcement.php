@@ -119,7 +119,7 @@
                     echo "<p>$date - $time </p>";
                     echo "<p>$cdetails[0] - $cname</p>";
                     echo "<p id='$count' style='display:none'>$course-$id</p>";
-                    echo "<button onclick='sendInfo($count)'>Accept Invite</button>";
+                    echo "<button class='invite-btn' onclick='sendInfo($count)'>Accept Invite</button>";
                     
                     echo "</div>";
                   

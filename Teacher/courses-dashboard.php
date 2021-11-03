@@ -1,226 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <title>Document</title>
     <link rel="stylesheet" href="courses-dashboard.css">
     <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        justify-content: space-between;
-      }
-      .content-area {
-        display: grid;
-        width: 95vw;
-        min-height: 70vh;
-        padding: 10px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-gap: 20px;
-        margin: auto auto;
-      }
+        :root {
+            --gold: #c59d5f;
+            --transition: 0.3s ease-in-out all;
+            box-sizing: border-box;
+        }
 
-      .image {
-        grid-row: 1/3;
-        grid-column: 1/2;
-      }
-      .image > img {
-        width: 100%;
-        height: 100%;
-      }
+        #heading {
+            /* border: 2px solid red; */
+            font-size: 1.5rem;
+            text-transform: capitalize;
+            border: .5px solid;
+            padding: 10px;
+        }
 
-      .course-desc {
-        grid-column: 2/3;
-        grid-row: 1/3;
-        width: 100%;
-        display: flex;
-        flex-direction:column;
-        border: 2px solid rgba(59, 54, 54, 0.068);
-      }
+        .content-area {
+            display: block;
+            padding: 10px;
+            grid-gap: 20px;
+            margin: auto auto;
+            /* border: 2px solid red; */
+        }
 
+        /* .content-area::before{
+          content: "";
+          background: url("../images/cover.jpg");
+          width: 200px;
+          height: 200px;
+      } */
 
-      .desc{
-          display:flex;
-  
-          margin:7px 0px;
-          justify-content: space-evenly;
-          border-bottom:0.5px solid #f4f4f4;
-      }
+        .image {
+            grid-row: 1/3;
+            grid-column: 1/2;
+            /* visibility: hidden; */
+        }
 
-      h3{
-        text-align:center;
-      }
+        .image>img {
+            width: 100%;
+            height: 100vh;
+            background-attachment: fixed;
+        }
 
-      
+        h3 {
+            text-align: center;
+        }
 
-      .header{
-        background-color:black;
-        color:white;
-        
-      }
+        table,
+        td,
+        th {
+            border: 1px solid #ddd;
+            text-align: center;
+            /* table-layout: auto; */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 75vw;
+            margin-top: 75px;
+            margin: auto;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+
+        .question-btn {
+            font-size: 1.5rem;
+            background: transparent;
+            border-color: transparent;
+            cursor: pointer;
+            color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .question-btn:hover {
+            /* transform: rotate(90deg); */
+            color: blue;
+        }
+
+        .cname {
+            max-width: 260px;
+            min-width: 150px;
+            box-sizing: border-box;
+            /* border: 2px solid red; */
+            padding: 0px;
+            padding-left: 5px;
+            text-align: left;
+        }
+
+        section {
+            padding: 10px;
+            /* border: 2px solid red; */
+            /* position: relative; */
+            min-height: 462px !important;
+        }
+
+        .head {
+            background-color: black;
+            color: white;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <?php session_start(); ?>
-    <?php   require 'navbar.php' ?>
-    <div><h3>Courses You teach</h3></div>
-    <div class="content-area">
-      <div class="image">
-        <img src="../images/cover.jpg" alt="image" />
-      </div>
-
-      <div class="course-desc">
-      <div class="desc header">
-            <div class="snum">S.No</div>
-          <div class="cname">Course Name</div>
-          <div class="cid">Course ID</div>
-          <div class="year">Year</div>
-          <div class="semester">Semester</div>
-        </div>
-
-        <?php 
-        
-        $tid = $_SESSION['id'];
-        $connection = mysqli_connect("localhost","root","","dbms_project") or die(mysqli_error($connection));
-        $query = "SELECT * FROM COURSE_TAUGHT WHERE teacher_id='$tid'";
-        $count=0;
-        $res = mysqli_query($connection,$query) or die(mysqli_error($connection));
-        while($row=mysqli_fetch_assoc($res)){
-          $count++;
-          $course = $row['course'];
-          $cdetails = explode("/",$course);
-          $cid = $cdetails[0];
-          $sem = $cdetails[1];
-          $year = $cdetails[2];
-          $query_cname = "SELECT course_name FROM COURSES WHERE course='$course'";
-          $res_cname = mysqli_query($connection,$query_cname);
-          $row_cname = mysqli_fetch_assoc($res_cname);
-          $cname = $row_cname['course_name'];
-          $rowId = "row".$count;
-          echo "<div class='desc' id='$rowId'>";
-          echo "<div class='snum'>$count</div>";
-          echo "<div class='cname rowdata'>$cname</div>";
-          echo "<div class='cid'>$cid</div>";
-          echo "<div class='year'>$year</div>";
-          echo "<div class='semester'>$sem</div>";
-          echo "<button class='annoucement' onclick='sendAN($rowId)'>Make Annoucement</button>";
-          echo "<button class='assignment' onclick='sendAS($rowId)' >Make Assignment</button>";
-          echo "<button class='sDetails' onclick='sendSP($rowId)'>Student Performance</button>";
-          echo "</div>";
-        }
-        ?>
-      </div>
+    <?php require 'navbar.php' ?>
+    <div id="heading">
+        courses you teach
     </div>
+    <section>
+        <div class="content-area">
+            <!-- <div class="image">
+                <img src="../images/cover.jpg" alt="image" />
+            </div> -->
 
-    <?php require '../footer.php' ?>
-    
-  </body>
-  <script>
+            <table>
+                <tr class="head">
+                    <th>S.No</th>
+                    <th>Course Name</th>
+                    <th>Course Id</th>
+                    <th>Year</th>
+                    <th>Semester</th>
+                    <th>Student performance</th>
+                    <th>Announcement</th>
+                    <th>Assignment</th>
+                </tr>
 
-        let sendSP = (course)=>{
-          console.log("hello");
+                <?php
 
-          let cdetails = course.childNodes;
-          let key = cdetails[2].innerHTML+"/"+cdetails[4].innerHTML+"/"+cdetails[3].innerHTML;
-          let form = document.createElement('form');
-          form.setAttribute('action','student_performance.php');
-          form.setAttribute('method','POST');
-          let input = document.createElement('input');
-          input.setAttribute('type','text');
-          input.setAttribute('name','cdetails');
-          input.setAttribute('value',key);
+                $tid = $_SESSION['id'];
+                $connection = mysqli_connect("localhost", "root", "", "dbms_project") or die(mysqli_error($connection));
+                $query = "SELECT * FROM COURSE_TAUGHT WHERE teacher_id='$tid'";
+                $count = 0;
+                $res = mysqli_query($connection, $query) or die(mysqli_error($connection));
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $count++;
+                    $course = $row['course'];
+                    $cdetails = explode("/", $course);
+                    $cid = $cdetails[0];
+                    $sem = $cdetails[1];
+                    $year = $cdetails[2];
+                    $query_cname = "SELECT course_name FROM COURSES WHERE course='$course'";
+                    $res_cname = mysqli_query($connection, $query_cname);
+                    $row_cname = mysqli_fetch_assoc($res_cname);
+                    $cname = $row_cname['course_name'];
+                    $rowId = "row" . $count;
+                    echo "<tr class='row-entry' id='$rowId'>";
+                    echo "<td class='snum'>$count</td>";
+                    echo "<td class='cname rowdata'>$cname</td>";
+                    echo "<td class='cid'>$cid</td>";
+                    echo "<td class='year'>$year</td>";
+                    echo "<td class='semester'>$sem</td>";
+                    echo '<td><button class="question-btn sDetails" onclick="sendAN($rowId)">
+                        <span class="plus-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                    </button></td>';
+                    echo ' <td><button class="question-btn announcement" onclick="sendAN($rowId)">
+                        <span class="plus-icon">
+                            <i class="far fa-plus-square"></i>
+                        </span>
+                    </button></td>';
+                    echo ' <td><button class="question-btn assignment" onclick="sendAN($rowId)">
+                        <span class="plus-icon">
+                            <i class="far fa-plus-square"></i>
+                        </span>
+                    </button></td>';
+                    echo "</tr>";
+                }
+                ?>
+            </table>
 
-          let submit = document.createElement('input');
-          submit.setAttribute('type','submit');
+        </div>
+    </section>
 
-          form.style.display="none";
+</body>
+<footer>
+    <?php
+    require '../footer.php';
+    ?>
+</footer>
+<script>
+    let sendSP = (course) => {
+        console.log("hello");
 
-          form.append(input);
-          form.append(submit);
-          document.body.append(form);
-          submit.click();
-        }
+        let cdetails = course.childNodes;
+        let key = cdetails[2].innerHTML + "/" + cdetails[4].innerHTML + "/" + cdetails[3].innerHTML;
+        let form = document.createElement('form');
+        form.setAttribute('action', 'student_performance.php');
+        form.setAttribute('method', 'POST');
+        let input = document.createElement('input');
+        input.setAttribute('type', 'text');
+        input.setAttribute('name', 'cdetails');
+        input.setAttribute('value', key);
 
-    let sendAN = (course)=>{
-      let course_details = course.childNodes;
-      let cid = course_details[2].innerHTML;
-      let year = course_details[3].innerHTML;
-      let semester = course_details[4].innerHTML;
-      
-      let form = document.createElement('form');
-      form.setAttribute("action","announcement.php");
-      form.setAttribute("method","post");
+        let submit = document.createElement('input');
+        submit.setAttribute('type', 'submit');
 
-      let cID = document.createElement('input');
-      cID.setAttribute("type","text");
-      cID.setAttribute("name","cid");
-      cID.setAttribute("value",cid);
-      
-      let yr = document.createElement('input');
-      yr.setAttribute("type","number");
-      yr.setAttribute("name","year");
-      yr.setAttribute("value",year);
+        form.style.display = "none";
 
-      let sem = document.createElement('input');
-      sem.setAttribute("type","number");
-      sem.setAttribute("name","sem");
-      sem.setAttribute("value",semester);
+        form.append(input);
+        form.append(submit);
+        document.body.append(form);
+        submit.click();
+    }
 
-      let submit = document.createElement('input');
-      submit.setAttribute("type","submit");
-      
-      
-      form.append(cID);
-      form.append(yr);
-      form.append(sem);
-      form.append(submit);
-      form.style.display="none";
-      document.body.append(form);
-      submit.click();
+    let sendAN = (course) => {
+        let course_details = course.childNodes;
+        let cid = course_details[2].innerHTML;
+        let year = course_details[3].innerHTML;
+        let semester = course_details[4].innerHTML;
+
+        let form = document.createElement('form');
+        form.setAttribute("action", "announcement.php");
+        form.setAttribute("method", "post");
+
+        let cID = document.createElement('input');
+        cID.setAttribute("type", "text");
+        cID.setAttribute("name", "cid");
+        cID.setAttribute("value", cid);
+
+        let yr = document.createElement('input');
+        yr.setAttribute("type", "number");
+        yr.setAttribute("name", "year");
+        yr.setAttribute("value", year);
+
+        let sem = document.createElement('input');
+        sem.setAttribute("type", "number");
+        sem.setAttribute("name", "sem");
+        sem.setAttribute("value", semester);
+
+        let submit = document.createElement('input');
+        submit.setAttribute("type", "submit");
+
+
+        form.append(cID);
+        form.append(yr);
+        form.append(sem);
+        form.append(submit);
+        form.style.display = "none";
+        document.body.append(form);
+        submit.click();
 
     }
 
-    let sendAS = (course)=>{
-      let course_details = course.childNodes;
-      let cid = course_details[2].innerHTML;
-      let year = course_details[3].innerHTML;
-      let semester = course_details[4].innerHTML;
-      
-      let form = document.createElement('form');
-      form.setAttribute("action","assignment.php");
-      form.setAttribute("method","post");
+    let sendAS = (course) => {
+        let course_details = course.childNodes;
+        let cid = course_details[2].innerHTML;
+        let year = course_details[3].innerHTML;
+        let semester = course_details[4].innerHTML;
 
-      let cID = document.createElement('input');
-      cID.setAttribute("type","text");
-      cID.setAttribute("name","cid");
-      cID.setAttribute("value",cid);
-      
-      let yr = document.createElement('input');
-      yr.setAttribute("type","number");
-      yr.setAttribute("name","year");
-      yr.setAttribute("value",year);
+        let form = document.createElement('form');
+        form.setAttribute("action", "assignment.php");
+        form.setAttribute("method", "post");
 
-      let sem = document.createElement('input');
-      sem.setAttribute("type","number");
-      sem.setAttribute("name","sem");
-      sem.setAttribute("value",semester);
+        let cID = document.createElement('input');
+        cID.setAttribute("type", "text");
+        cID.setAttribute("name", "cid");
+        cID.setAttribute("value", cid);
 
-      let submit = document.createElement('input');
-      submit.setAttribute("type","submit");
-      
-      
-      form.append(cID);
-      form.append(yr);
-      form.append(sem);
-      form.append(submit);
-      form.style.display="none";
-      document.body.append(form);
-      submit.click();
+        let yr = document.createElement('input');
+        yr.setAttribute("type", "number");
+        yr.setAttribute("name", "year");
+        yr.setAttribute("value", year);
+
+        let sem = document.createElement('input');
+        sem.setAttribute("type", "number");
+        sem.setAttribute("name", "sem");
+        sem.setAttribute("value", semester);
+
+        let submit = document.createElement('input');
+        submit.setAttribute("type", "submit");
+
+
+        form.append(cID);
+        form.append(yr);
+        form.append(sem);
+        form.append(submit);
+        form.style.display = "none";
+        document.body.append(form);
+        submit.click();
 
     }
-  </script>
+</script>
+
 </html>
