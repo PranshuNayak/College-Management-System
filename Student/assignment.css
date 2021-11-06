@@ -170,6 +170,9 @@ p {
 Questions
 ===============
 */
+section{
+  min-height: 455px ;
+}
 .questions {
   width: 65vw;
   margin: 0 auto;
@@ -177,10 +180,10 @@ Questions
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  border: 2px solid black;
+  border: 1px solid black;
   justify-content: center;
   position: relative;
-  top: -2px;
+  top: -1px;
   /* z-index: -1; */
   
 }

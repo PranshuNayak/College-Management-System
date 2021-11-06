@@ -170,6 +170,9 @@ p {
 Questions
 ===============
 */
+section{
+  min-height: 455px ;
+}
 .questions {
   width: 65vw;
   margin: 0 auto;
@@ -177,10 +180,10 @@ Questions
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  border: 2px solid black;
+  border: 1px solid black;
   justify-content: center;
   position: relative;
-  top: -2px;
+  top: -1px;
   /* z-index: -1; */
   
 }
@@ -271,6 +274,18 @@ Questions
 footer{
     position :relative;
     /* top: -2px; */
+}
+
+.invite-btn{
+  border-radius: 3px;
+  padding: 2px;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0);
+  outline: rgb(141, 23, 23);
+  font-weight: 350;
+}
+.invite-btn:hover{
+  background-color: #e0e7f1;
 }
 
 

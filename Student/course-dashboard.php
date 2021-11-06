@@ -44,8 +44,8 @@
            border: 2px solid rgba(59, 54, 54, 0.068);
            grid-template-rows: repeat(2,1fr);
             border-radius: 10px;
-            height:150px;
-            
+            height:160px;
+            padding: 5px;            
        }
 
        .grade{
