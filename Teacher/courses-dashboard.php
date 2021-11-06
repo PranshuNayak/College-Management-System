@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="courses-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body {
         display: flex;
@@ -107,7 +108,7 @@
           echo "<div class='cid'>$cid</div>";
           echo "<div class='year'>$year</div>";
           echo "<div class='semester'>$sem</div>";
-          echo "<button class='annoucement' onclick='sendAN($rowId)'>Make Annoucement</button>";
+          echo "<button class='announcement' onclick='sendAN($rowId)' >Make Assignment</button>";
           echo "<button class='assignment' onclick='sendAS($rowId)' >Make Assignment</button>";
           echo "<button class='sDetails' onclick='sendSP($rowId)'>Student Performance</button>";
           echo "</div>";
