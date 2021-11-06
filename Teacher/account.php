@@ -32,6 +32,7 @@
   <?php session_start() ?>
 <?php   require 'navbar.php' ?>
     <div class="container mb-2" >
+    <section>
     <div class="container light-style flex-grow-1 container-p-y">
 
         <h4 class="font-weight-bold py-3">
@@ -161,9 +162,14 @@
     
       </div>
     </div>
-    <?php require '../footer.php' ?>
+    </section>
 
 </body>
+<footer>
+  <?php
+  require '../footer.php';
+  ?>
+</footer>
 
 <!-- 2. GOOGLE JQUERY JS v3.2.1  JS !-->
 <!-- 3. BOOTSTRAP v4.0.0         JS !-->
