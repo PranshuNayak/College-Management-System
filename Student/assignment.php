@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <!-- main css -->
     <link rel="stylesheet" href="./assignment.css" />
+    <style>
+        .question-title{
+          display:grid;
+          grid-template-columns:60% 20% 10%;
+      }
+    </style>
 </head>
 
 <body>
@@ -42,8 +48,8 @@
                 assignment
             </div>
             <div class="search_bar">
-                <input type="text" name="search" id="search" placeholder="Date/Course_Id" style="background-color: white; border: 0.5px solid black;">
-                <button type="button" class="search-btn" style="background-color: white; border: 0.5px solid black;">Search</button>
+                <input type="text" name="search" id="search" class="sinput" placeholder="Date/Course_Id" style="background-color: white; border: 0.5px solid black;">
+                <button type="button" class="search-btn sbtn" style="background-color: white; border: 0.5px solid black;">Search</button>
             </div>
         </div>
     </header>
@@ -75,20 +81,12 @@
                     echo "<p>$date - $time </p>";
                     echo "<p>$cdetails[0] - $cname</p>";
                     echo "</div>";
-                    echo "<p>$title</p>";
-                    echo "<button type='button' class='question-btn'>";
-                    echo ' <span class="plus-icon">';
-                    echo '<i class="far fa-plus-square"></i>';
-                    echo ' </span>';
-                    echo '<span class="minus-icon">';
-                    echo '<i class="far fa-minus-square"></i>';
-                    echo ' </span>';
-                    echo '</button>';
-                    echo "</div>";
+                     echo "<p>$title</p>";
+                    echo "<div class='scol2'><i class='fas fa-plus plus'></i><i class='fas fa-minus minus'></i></div>";
                     echo '<div class="question-text ">';
                     echo "<p>$description</p>";
-                   
                     echo '</div>';
+                    echo "</div>";
                     echo "</article>";
                 }
                 if($count==0){
@@ -100,6 +98,37 @@
         
     </section>
     <script src="./assignment.js"></script>
+    <script>
+    let minus = document.querySelectorAll('.minus');
+    minus.forEach(icon => {
+        icon.style.display="none";
+    });
+    let plus = document.querySelectorAll('.plus');
+    plus.forEach(icon => {
+        icon.addEventListener('click',()=>{
+            let hiddenDiv = icon.parentElement.parentElement.children[3]
+            hiddenDiv.style.display="block"
+          
+            let buttons = icon.parentElement.children
+            buttons[0].style.display="none";
+            buttons[1].style.display="block";
+        })
+    });
+
+    
+    minus.forEach(icon => {
+        icon.addEventListener('click',()=>{
+            let hiddenDiv = icon.parentElement.parentElement.children[3]
+            hiddenDiv.style.display="none"
+            
+            let buttons = icon.parentElement.children
+            buttons[0].style.display="block";
+            buttons[1].style.display="none";
+        })
+    });
+
+    
+  </script>
 </body>
 <footer>
     <?php

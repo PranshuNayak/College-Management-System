@@ -257,7 +257,7 @@ section{
 .show-text .question-text {
   display: block;
 }
-.minus-icon {
+.minus {
   display: none;
 }
 .show-text .minus-icon {
