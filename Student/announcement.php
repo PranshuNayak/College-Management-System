@@ -61,8 +61,8 @@
                 annnouncement
             </div>
             <div class="search_bar">
-                <input type="text" name="search" id="search" placeholder="Date/Course_Id" style="background-color: white; border: 0.5px solid black;">
-                <button type="button" class="search-btn" style="background-color: white; border: 0.5px solid black;" >Search</button>
+                <input type="text" name="search" class="sinput" id="search" placeholder="Date/Course_Id" style="background-color: white; border: 0.5px solid black;">
+               
             </div>
         </div>
     </header>
@@ -87,7 +87,7 @@
                     $cdetails = explode("/",$course);
                     echo "<article class='question'>";
                     echo "<div class='question-title'>";
-                    echo "<div class='date&course'>";
+                    echo "<div class='date&course dc'>";
                     echo "<p>$date - $time </p>";
                     echo "<p>$cdetails[0] - $cname</p>";
                     echo "</div>";
@@ -117,7 +117,7 @@
                     $cdetails = explode("/",$course);
                     echo "<article class='question'>";
                     echo "<div class='question-title'>";
-                    echo "<div class='date&course'>";
+                    echo "<div class='date&course dc'>";
                     echo "<p>$date - $time </p>";
                     echo "<p>$cdetails[0] - $cname</p>";
                     echo "<p id='$count' style='display:none'>$course-$id</p>";
@@ -222,8 +222,32 @@
             buttons[1].style.display="none";
         })
     });
+
+    document.querySelector('.sinput').addEventListener('keyup',()=>{
+        let key = document.querySelector('.sinput').value.toUpperCase();
+        
+        if(key){
+            let contents = document.querySelectorAll('.dc')
+        contents.forEach(content => {
+            let element = content.children
+            let parent = content.parentElement.parentElement
+            let date = element[0].innerHTML.split("-")[1]
+            let cid = element[1].innerHTML.split("-")[0]
+            console.log(cid,date)
+            if( !(date.includes(key) || cid.includes(key) ) ){
+                parent.style.display="none";
+            }
+        });
+        }
+        else{
+            let articles = document.querySelectorAll('.question')
+        articles.forEach(article => {
+            article.style.display="block";
+        });
+        }
+    })
   </script>
-       <script src="./announcement.js"></script>
+       
 </body>
 <footer>
     <?php

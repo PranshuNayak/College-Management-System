@@ -49,7 +49,7 @@
             </div>
             <div class="search_bar">
                 <input type="text" name="search" id="search" class="sinput" placeholder="Date/Course_Id" style="background-color: white; border: 0.5px solid black;">
-                <button type="button" class="search-btn sbtn" style="background-color: white; border: 0.5px solid black;">Search</button>
+                
             </div>
         </div>
     </header>
@@ -77,7 +77,7 @@
                     $cdetails = explode("/",$course);
                     echo "<article class='question'>";
                     echo "<div class='question-title'>";
-                    echo "<div class='date&course'>";
+                    echo "<div class='date&course dc'>";
                     echo "<p>$date - $time </p>";
                     echo "<p>$cdetails[0] - $cname</p>";
                     echo "</div>";
@@ -97,7 +97,7 @@
    
         
     </section>
-    <script src="./assignment.js"></script>
+    
     <script>
     let minus = document.querySelectorAll('.minus');
     minus.forEach(icon => {
@@ -127,7 +127,28 @@
         })
     });
 
-    
+    document.querySelector('.sinput').addEventListener('keyup',()=>{
+        let key = document.querySelector('.sinput').value.toUpperCase();
+        
+        if(key){
+            let contents = document.querySelectorAll('.dc')
+        contents.forEach(content => {
+            let element = content.children
+            let parent = content.parentElement.parentElement
+            let date = element[0].innerHTML.split("-")[1]
+            let cid = element[1].innerHTML.split("-")[0]
+            if( !(date.includes(key) || cid.includes(key) ) ){
+                parent.style.display="none";
+            }
+        });
+        }
+        else{
+            let articles = document.querySelectorAll('.question')
+        articles.forEach(article => {
+            article.style.display="block";
+        });
+        }
+    })
   </script>
 </body>
 <footer>
