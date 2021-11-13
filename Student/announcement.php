@@ -10,12 +10,25 @@
     <!-- <link rel="stylesheet" href="./normalize.css" /> -->
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <!-- main css -->
     <link rel="stylesheet" href="./announcement.css" />
     <style>
         .details{
             display:"none";
         }
+        .hidden{
+          display:"none";
+      }
+      .question-title{
+          display:grid;
+          grid-template-columns:60% 20% 10%;
+      }
     </style>
 </head>
 
@@ -77,24 +90,13 @@
                     echo "<div class='date&course'>";
                     echo "<p>$date - $time </p>";
                     echo "<p>$cdetails[0] - $cname</p>";
-                   
-                    
-                    
                     echo "</div>";
-                  
                      echo "<p>$title</p>";
-                    echo "<button type='button' class='question-btn'>";
-                    echo ' <span class="plus-icon">';
-                    echo '<i class="far fa-plus-square"></i>';
-                    echo ' </span>';
-                    echo '<span class="minus-icon">';
-                    echo '<i class="far fa-minus-square"></i>';
-                    echo ' </span>';
-                    echo '</button>';
-                    echo "</div>";
+                    echo "<div class='scol2'><i class='fas fa-plus plus'></i><i class='fas fa-minus minus'></i></div>";
                     echo '<div class="question-text ">';
                     echo "<p>$description</p>";
                     echo '</div>';
+                    echo "</div>";
                     echo "</article>";
                 }
 
@@ -120,22 +122,15 @@
                     echo "<p>$cdetails[0] - $cname</p>";
                     echo "<p id='$count' style='display:none'>$course-$id</p>";
                     echo "<button class='invite-btn' onclick='sendInfo($count)'>Accept Invite</button>";
-                    
                     echo "</div>";
                   
                      echo "<p>$title</p>";
-                    echo "<button type='button' class='question-btn sideBtn'>";
-                    echo ' <span class="plus-icon">';
-                    echo '<i class="far fa-plus-square"></i>';
-                    echo ' </span>';
-                    echo '<span class="minus-icon">';
-                    echo '<i class="far fa-minus-square"></i>';
-                    echo ' </span>';
-                    echo '</button>';
-                    echo "</div>";
-                    echo '<div class="question-text ">';
+                     echo '<div class="scol2"><i class="fas fa-plus plus"></i><i class="fas fa-minus minus"></i></div>';
+                     echo '<div class="question-text ">';
                     echo "<p>$description</p>";
                     echo '</div>';
+                    echo "</div>";
+                    
                     echo "</article>";
                 }
 
@@ -199,6 +194,35 @@
           submit.click();
         }
     </script>
+    <script>
+    let minus = document.querySelectorAll('.minus');
+    minus.forEach(icon => {
+        icon.style.display="none";
+    });
+    let plus = document.querySelectorAll('.plus');
+    plus.forEach(icon => {
+        icon.addEventListener('click',()=>{
+            let hiddenDiv = icon.parentElement.parentElement.children[3]
+            hiddenDiv.style.display="block"
+          
+            let buttons = icon.parentElement.children
+            buttons[0].style.display="none";
+            buttons[1].style.display="block";
+        })
+    });
+
+    
+    minus.forEach(icon => {
+        icon.addEventListener('click',()=>{
+            let hiddenDiv = icon.parentElement.parentElement.children[3]
+            hiddenDiv.style.display="none"
+            
+            let buttons = icon.parentElement.children
+            buttons[0].style.display="block";
+            buttons[1].style.display="none";
+        })
+    });
+  </script>
        <script src="./announcement.js"></script>
 </body>
 <footer>
