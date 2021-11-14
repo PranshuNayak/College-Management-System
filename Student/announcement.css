@@ -231,16 +231,20 @@ section{
   color: var(--grey-800);
 }
 .question-btn {
-  font-size: 1.5rem;
-  background: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  color: var(--gold);
-  transition: var(--transition);
+  font-size: 1.25rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: var(--gold);
+    transition: var(--transition);
+    width: 25px;
+    /* height: 24px; */
+    padding-left: 2px;
+    border: 2px solid;
 }
-.question-btn:hover {
+/* .question-btn:hover {
   transform: rotate(90deg);
-}
+} */
 .question-text {
   padding-top: 1rem;
   margin-top: 1rem;
