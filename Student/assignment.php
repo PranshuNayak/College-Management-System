@@ -82,7 +82,7 @@
                     echo "<p>$cdetails[0] - $cname</p>";
                     echo "</div>";
                      echo "<p>$title</p>";
-                    echo "<div class='scol2'><i class='fas fa-plus plus'></i><i class='fas fa-minus minus'></i></div>";
+                    echo "<div class='question-btn'><i class='fas fa-plus plus'></i><i class='fas fa-minus minus'></i></div>";
                     echo '<div class="question-text ">';
                     echo "<p>$description</p>";
                     echo '</div>';
