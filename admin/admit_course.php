@@ -24,13 +24,14 @@
       border: .5px solid;
       padding: 10px;
     }
-
     .content-area {
       display: block;
       padding: 10px;
       grid-gap: 20px;
       margin: auto auto;
       text-align: center;
+ 
+      /* border:2px solid black; */
       /* border: 2px solid red; */
     }
 
@@ -38,40 +39,16 @@
       text-align: center;
     }
 
-    table,
-    td,
-    th {
-      border: 1px solid #ddd;
-      text-align: center;
-      /* table-layout: auto; */
-    }
 
-    table {
-      border-collapse: collapse;
-      width: 58vw;
-      margin-top: 75px;
-      margin: auto;
-    }
-
-    th,
-    td {
-      padding: 15px;
-    }
-
-    section {
-      padding: 10px;
-      /* border: 2px solid red; */
-      /* position: relative; */
-      min-height: 453px !important;
-      margin-top: 10px;
-    }
+    
 
     .head {
       background-color: black;
       color: white;
+      height:40px;
     }
 
-    .container {
+    .img {
       width: 730px;
       text-align: center;
       margin: auto !important;
@@ -83,13 +60,7 @@
       margin-bottom: 7px;
     }
 
-    .review {
-      display: flex;
-      flex-direction: column;
-      min-height: 80vh;
-      width: 50%;
-      margin: 0 auto;
-    }
+    
 
 
 
@@ -106,6 +77,15 @@
       margin: 0 11px 0 0;
       border-radius: 8px;
     }
+
+    .container{
+      min-height:65vh;
+      border:2px solid whitesmoke;
+    }
+
+   
+
+    
   </style>
 </head>
 
@@ -127,23 +107,23 @@
   <div id="heading">
     course requests
   </div>
-  <section>
+  
     <div class="content-area">
 
-      <div class="search-bar">
-        <div class='d-flex'>
-          <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+      <div class="search-bar bar">
+        <div class='d-flex inside'>
+          <input class="form-control me-2 search" type="search" placeholder="Search by course id,semester,year,teacher id" aria-label="Search" class="search">
           <button class="btn btn-outline-success send">Approve Course</button>
         </div>
       </div>
 
-      <table>
-        <tr class="head">
-          <th class="sno-h">S.No</th>
-          <th class="cid-h">Course Id</th>
-          <th class="tid-h">Teacher Id</th>
-          <th class="checkbox-h">Approve Course</th>
-        </tr>
+      <div class="container">
+        <div class="head row"  style="display:grid;grid-template-columns:repeat(4,1fr);">
+          <div >S.No</div>
+          <div >Course Id</div>
+          <div >Teacher Id</div>
+          <div>Approve Course</div>
+        </div>
 
         <?php
 
@@ -156,26 +136,25 @@
           $course = $row['course'];
           $tid = $row['teacher_id'];
 
-          echo "<tr class='row-entry' id='$count'>";
-          echo "<td class='sno'>$count</td>";
-          echo "<td class='cid'>$course</td>";
-          echo "<td class='tid'>$tid</td>";
-          echo "<td class='checkbox'>
+          echo "<div class='row courses' id='$count' style='display:grid;grid-template-columns:repeat(4,1fr);'>";
+          echo "<div class='sno'>$count</div>";
+          echo "<div class='cid'>$course</div>";
+          echo "<div class='tid'>$tid</div>";
+          echo "<div class='checkbox'>
                     <label for='select-$count' class='label-checkbox'>Select</label>
                     <input class='option' type='checkbox' id='select-$count'>
-                  </td>";
-          echo "</tr>";
+                  </div>";
+          echo "</div>";
         }
         if ($count == 0) {
-          echo "</table>";
-          echo '<div class="container"><img src="../images/panda.jpg" width="700px" height="535px"></div>';
+          echo '<div class="img"><img src="../images/panda.jpg" width="700px" height="535px"></div>';
         }
 
         ?>
-      </table>
+      </div>
 
     </div>
-  </section>
+  
 
 </body>
 <footer>
@@ -186,10 +165,11 @@
 
 <script>
   let search_bar = document.querySelector('.search');
-  search_bar.addEventListener('keyup', () => {
-    console.log("Hello")
-    let hint = search_bar.value.toUpperCase();
+  search_bar.addEventListener('keyup',()=>{
 
+    let hint = search_bar.value.toUpperCase();
+  
+   if(hint){
     let row_course = document.querySelectorAll('.courses');
     for (let i = 0; i < row_course.length; i++) {
       let cur_row = row_course[i].childNodes;
@@ -201,9 +181,21 @@
         row_course[i].style.display = "none";
       } else {
         row_course[i].style.display = "grid";
-      }
+
     }
-  });
+    }
+   }else{
+    let row_course = document.querySelectorAll('.courses');
+    for (let i = 0; i < row_course.length; i++) {
+      let cur_row = row_course[i].childNodes;
+
+      let course = cur_row[1].innerHTML;
+      let tid = cur_row[2].innerHTML;
+        row_course[i].style.display = "grid";
+    }
+   }
+
+  })
 
   document.querySelector('.send').addEventListener('click', () => {
 

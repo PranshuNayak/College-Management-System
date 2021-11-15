@@ -34,44 +34,12 @@
       /* border: 2px solid red; */
     }
 
-    h3 {
-      text-align: center;
-    }
-
-    table,
-    td,
-    th {
-      border: 1px solid #ddd;
-      text-align: center;
-      /* table-layout: auto; */
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 58vw;
-      margin-top: 75px;
-      margin: auto;
-    }
-
-    th,
-    td {
-      padding: 15px;
-    }
-
-    section {
-      padding: 10px;
-      /* border: 2px solid red; */
-      /* position: relative; */
-      min-height: 453px !important;
-      margin-top: 10px;
-    }
-
     .head {
       background-color: black;
       color: white;
     }
 
-    .container {
+    .img {
       width: 730px;
       text-align: center;
       margin: auto !important;
@@ -104,6 +72,11 @@
       margin: 0 11px 0 0;
       border-radius: 8px;
     }
+
+    .container{
+      min-height:65vh;
+      border:2px solid whitesmoke;
+    }
   </style>
 </head>
 
@@ -127,7 +100,7 @@
     invite students
   </div>
   <!-- <div class="student-details"> -->
-  <section>
+  
     <div class="content-area">
 
       <div class="search-bar">
@@ -137,14 +110,17 @@
         </div>
       </div>
 
-      <table>
-        <tr class="head">
-          <th class="sno-h">S.No</th>
-          <th class="name-h">Student Name</th>
-          <th class="id-h">Student id</th>
-          <th class="email-h">Email</th>
-          <th class="checkbox-h">Approve Students</th>
-        </tr>
+      
+  
+        <div class="container">
+        
+        <div class="head row" style="display:grid;grid-template-columns:repeat(5,1fr);">
+          <div >S.No</div>
+          <div >Student Name</div>
+          <div >Student Id</div>
+          <div>Email</div>
+          <div>Approve Students</div>
+        </div>
 
         <?php
         if (isset($_POST['cid']) && isset($_POST['year']) && isset($_POST['sem'])) {
@@ -167,28 +143,27 @@
             $roll_no = $row['student_id'];
             $email = $row['student_email'];
 
-            echo "<tr class='row-entry rdetails' id='$count'>";
-            echo "<td class='sno'>$count</td>";
-            echo "<td class='name'>$name</td>";
-            echo "<td class='id'>$roll_no</td>";
-            echo "<td class='email'>$email</td>";
-            echo "<td class='checkbox'>
+            echo "<div class=' rdetails row' id='$count'  style='display:grid;grid-template-columns:repeat(5,1fr);'>";
+            echo "<div class='sno'>$count</div>";
+            echo "<div class='name'>$name</div>";
+            echo "<div class='id'>$roll_no</div>";
+            echo "<div class='email'>$email</div>";
+            echo "<div class='checkbox'>
                     <label for='select-$count' class='label-checkbox'>Select</label>
                     <input class='option' type='checkbox' id='select-$count'>
-                  </td>";
-            echo "</tr>";
+                  </div>";
+            echo "</div>";
           }
           if ($count == 0) {
-            echo "</table>";
-            echo '<div class="container"><img src="../images/panda.jpg" width="700px" height="535px"></div>';
+            echo '<div class="img"><img src="../images/panda.jpg" width="700px" height="535px"></div>';
           }
         }
 
         ?>
-      </table>
+       </div>
 
     </div>
-  </section>
+
 
 </body>
 <footer>
