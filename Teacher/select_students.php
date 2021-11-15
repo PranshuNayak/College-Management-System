@@ -132,7 +132,7 @@
 
       <div class="search-bar">
         <div class="d-flex">
-          <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" class='search'>
           <button class="btn btn-outline-success send">Send Invite</button>
         </div>
       </div>
