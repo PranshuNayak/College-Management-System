@@ -74,6 +74,7 @@
                     $cname = $row_cname['course_name'];
                     $date = $row['assignment_day'];
                     $time = $row['assignment_time'];
+                    $link = $row['assignment_link'];
                     $cdetails = explode("/",$course);
                     echo "<article class='question'>";
                     echo "<div class='question-title'>";
@@ -84,7 +85,7 @@
                      echo "<p>$title</p>";
                     echo "<div class='question-btn'><i class='fas fa-plus plus'></i><i class='fas fa-minus minus'></i></div>";
                     echo '<div class="question-text ">';
-                    echo "<p>$description</p>";
+                    echo "<p>$description<p><a href='$link'>Assignment Link</a></p></p>";
                     echo '</div>';
                     echo "</div>";
                     echo "</article>";
