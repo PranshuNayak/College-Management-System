@@ -151,6 +151,7 @@
           $cid = $_POST['cid'];
           $sem = $_POST['year'];
           $year = $_POST['sem'];
+          $course = $cid."/".$sem."/".$year;
           echo "<div class='cdetails' style='display:none'>";
           echo "<div>$cid</div>";
           echo "<div>$sem</div>";
@@ -158,7 +159,7 @@
           echo "</div>";
           $id = $_SESSION['id'];
           $con = mysqli_connect("localhost", "root", "", "dbms_project") or die(mysqli_error($con));
-          $query = "SELECT * FROM STUDENT";
+          $query = "SELECT * FROM STUDENT WHERE student_id NOT IN (SELECT (student_id) FROM COURSE_INVITE WHERE course='$course' ) ";
           $res = mysqli_query($con, $query) or die(mysqli_error($con));
           $count = 0;
           while ($row = mysqli_fetch_assoc($res)) {

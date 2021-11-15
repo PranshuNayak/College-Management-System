@@ -55,18 +55,19 @@
             </div>
             <div class="welcome">
                 <div>
-                    <h1>Welcome <?php echo $_SESSION['name'] ?>
+                    <h3>Welcome <?php echo $_SESSION['name'] ?>
                         <br>Here's some quick tips to get you started!
-                    </h1>
+                    </h3>
                     <ul>
-                        <li>Click on the Courses Tab to access all your courses</li>
+                        <li>View and Change your Account credentials in the Account tab</li>
+                        <li>Access your current courses and register for new courses in the course tab</li>
 
-                        <li>Complete Your remaining tasks by visiting the Assignment Section</li>
+                        <li>Complete your assignments in the Assignment tab</li>
 
 
-                        <li>Complete Your remaining tasks by visiting the Announcement and Assignment Section</li>
+                        <li>See important notifications in the Annoucement section</li>
 
-                        <li>View Your Account Information in the Account Section</li>
+                        
                     </ul>
                 </div>
             </div>

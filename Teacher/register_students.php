@@ -15,21 +15,32 @@ if(isset($_POST['course']) && isset($_POST['sids'])){
         for ($i=0; $i <sizeof($student) ; $i++) { 
             $stu = $student[$i];
             $query = "INSERT INTO COURSE_INVITE (course,student_id,TITLE,DESCRIPTION,annoucement_time,annoucement_day) VALUES ('$course','$stu','$title','$desc','$time','$date')";
-             $res = mysqli_query($con,$query) or die(mysqli_error($con));    
-    }
-    $query1= "UPDATE COURSE_TAUGHT SET COURSE_INVITE_SENT=1 WHERE course='$course'";
-        $res1 = mysqli_query($con,$query1) or die(mysqli_error($con));
+             $res = mysqli_query($con,$query) ;
+             if($res){
+                echo "<script>alert('Invitation sent Successfully')</script>";
+                echo "<script>window.location.href='course_invitation.php'</script>'";
+               
+                }else{
+                    echo "<script>alert('Unable to send Invitation')</script>";
+                echo "<script>window.location.href='select_students.php'</script>'";
+                }
+     }
+      
         
-        echo "<script>alert('Invitation sent Successfully')</script>";
-        echo "<script>window.location.href='course_invitation.php'</script>'";
     }
     else{
         $query = "INSERT INTO COURSE_INVITE (course,student_id,TITLE,DESCRIPTION,annoucement_time,annoucement_day) VALUES ('$course','$students','$title','$desc','$time','$date')";
-        $res = mysqli_query($con,$query) or die(mysqli_error($con));    
-        $query1= "UPDATE COURSE_TAUGHT SET COURSE_INVITE_SENT=1 WHERE course='$course'";
-        $res1 = mysqli_query($con,$query1) or die(mysqli_error($con));
-        echo "<script>alert('Invitation sent Successfully')</script>";
-        echo "<script>window.location.href='course_invitation.php'</script>'";
+        $res = mysqli_query($con,$query);
+            
+        if($res){
+            echo "<script>alert('Invitation sent Successfully')</script>";
+            echo "<script>window.location.href='course_invitation.php'</script>'";
+           
+            }else{
+                echo "<script>alert('Unable to send Invitation')</script>";
+            echo "<script>window.location.href='select_students.php'</script>'";
+            }
+        
     }
 }
 

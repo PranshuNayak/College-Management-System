@@ -58,13 +58,13 @@
                         <br>Here's some quick tips to get you started!
                     </h1>
                     <ul>
-                        <li>Click on the Courses Tab to access all your courses</li>
+                    <li>View and Change your Account credentials in the Account tab</li>
+                        <li>Send course invitations for your courses to your students in course</li>
 
-                        <li>Complete Your remaining tasks by visiting the Assignment Section</li>
+                        <li>Complete your assignments in the Assignment tab</li>
 
-                        <li>Complete Your remaining tasks by visiting the Announcement and Assignment Section</li>
 
-                        <li>View Your Account Information in the Account Section</li>
+                        <li>See important notifications in the Annoucement section</li>
                     </ul>
                 </div>
             </div>

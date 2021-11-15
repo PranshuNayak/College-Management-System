@@ -128,7 +128,7 @@
         <?php
         $id = $_SESSION['id'];
         $con = mysqli_connect("localhost", "root", "", "dbms_project");
-        $query = "SELECT * FROM COURSE_TAUGHT WHERE teacher_id='$id' AND COURSE_INVITE_SENT=0";
+        $query = "SELECT * FROM COURSE_TAUGHT WHERE teacher_id='$id'";
         $res = mysqli_query($con, $query) or die(mysqli_error($con));
         $count = 0;
         while ($row = mysqli_fetch_assoc($res)) {
