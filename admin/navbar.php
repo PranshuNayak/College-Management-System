@@ -57,7 +57,10 @@
    for (let i = 0; i < a_tags.length; i++) {
        let href = a_tags[i].getAttribute('href');
         if(loc.indexOf(href)!=-1){
-            a_tags[i].style.color="blue";
+            a_tags[i].style.backgroundColor="#4CA8BD";
+            
+            a_tags[i].style.color="white";
+            a_tags[i].style.borderRadius="6px";
            
         }
 

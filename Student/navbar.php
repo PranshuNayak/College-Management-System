@@ -20,7 +20,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="navbar-left">
-                <a><img src="../images/iiitdmj-icon.jpg" alt="IITDMJ LOGO" width="50" height="40"></a>
+                <a><img src="../images/iitdmj-icon.jpg" alt="IITDMJ LOGO" width="50" height="40"></a>
             </li></ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0" id="navigation">
                 <li class="nav-item">
@@ -65,7 +65,10 @@
    for (let i = 0; i < a_tags.length; i++) {
        let href = a_tags[i].getAttribute('href');
         if(loc.indexOf(href)!=-1){
-            a_tags[i].style.color="blue";
+            a_tags[i].style.backgroundColor="#4CA8BD";
+            
+            a_tags[i].style.color="white";
+            a_tags[i].style.borderRadius="6px";
            
         }
 
