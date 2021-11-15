@@ -5,7 +5,7 @@ if($_POST['cid'] && $_POST['sem'] && $_POST['year'] && isset($_POST['sid']) ){
     $id = $_POST['sid'];
     $con = mysqli_connect("localhost","root","","dbms_project") or die(mysqli_error($con));
     $query = "INSERT INTO COURSE_STUDENT (course,student_id) VALUES ('$course','$id')";
-    $res = mysqli_query($con,$query) or die(mysqli_error($con));
+    $res = mysqli_query($con,$query);
 if($res==0){
     echo "<script>alert('Unable to insert data! Try Again')</script>";
 }

@@ -1,4 +1,4 @@
-<!doctype html>
+[18:19, 11/15/2021] Piyush Bhandari: <!doctype html>
 <html lang="en">
 
 <head>
@@ -151,7 +151,6 @@
           $cid = $_POST['cid'];
           $sem = $_POST['year'];
           $year = $_POST['sem'];
-          $course = $cid."/".$sem."/".$year;
           echo "<div class='cdetails' style='display:none'>";
           echo "<div>$cid</div>";
           echo "<div>$sem</div>";
@@ -159,7 +158,7 @@
           echo "</div>";
           $id = $_SESSION['id'];
           $con = mysqli_connect("localhost", "root", "", "dbms_project") or die(mysqli_error($con));
-          $query = "SELECT * FROM STUDENT WHERE student_id NOT IN (SELECT (student_id) FROM COURSE_INVITE WHERE course='$course' ) ";
+          $query = "SELECT * FROM STUDENT";
           $res = mysqli_query($con, $query) or die(mysqli_error($con));
           $count = 0;
           while ($row = mysqli_fetch_assoc($res)) {
@@ -168,7 +167,7 @@
             $roll_no = $row['student_id'];
             $email = $row['student_email'];
 
-            echo "<tr class='row-entry' id='$count'>";
+            echo "<tr class='row-entry rdetails' id='$count'>";
             echo "<td class='sno'>$count</td>";
             echo "<td class='name'>$name</td>";
             echo "<td class='id'>$roll_no</td>";
@@ -200,13 +199,14 @@
 <script>
   let search_bar = document.querySelector('.search');
   search_bar.addEventListener('keyup', () => {
-    let hint = search_bar.value;
+    let hint = search_bar.value.toUpperCase();
     let students = document.querySelectorAll('.rdetails');
     for (let i = 0; i < students.length; i++) {
       let student = students[i].childNodes;
 
-      let email = student[3].innerHTML;
-      if (email.indexOf(hint) == -1) {
+      let name = student[1].innerHTML.toUpperCase();
+      let rollno = student[2].innerHTML.toUpperCase();
+      if (name.indexOf(hint) == -1 && rollno.indexOf(hint)) {
         students[i].style.display = "none";
       } else {
         students[i].style.display = "grid";
