@@ -59,12 +59,11 @@
                     </h1>
                     <ul>
                     <li>View and Change your Account credentials in the Account tab</li>
-                        <li>Send course invitations for your courses to your students in course</li>
+                        <li>Access your current courses and register for new courses in the course tab</li>
 
-                        <li>Complete your assignments in the Assignment tab</li>
-
-
-                        <li>See important notifications in the Annoucement section</li>
+                        <li> The assignment and annoucement tag is not directly accessible. To avoid data breach you have to goto your course 
+                            there you are provided a button to give assignment and make annoucement for your courses.
+    </li>
                     </ul>
                 </div>
             </div>
